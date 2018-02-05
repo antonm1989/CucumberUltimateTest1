@@ -1,0 +1,27 @@
+<html><head>
+    <link rel="stylesheet" type="text/css" href="page-load-errors.css">
+    <!-- LOCALIZERS: You might want to change the font family. You can also add styles to override sizes, etc. -->
+    <style>
+        body {font-family:'-apple-system-font';}
+    </style>
+    <!-- LOCALIZERS: The next line contains the page title that appears in the window's title bar -->
+    <title>Сбой при открытии страницы</title>
+<style></style></head>
+
+<body style="">
+    <div class="content-container">
+        <div class="error-container">
+            <div class="text-container">
+                <!-- Main title here. -->
+                <p class="error-title">Safari не может подключиться к серверу</p>
+            </div>
+            <div class="text-container">
+                <!-- Error message here. -->
+                <p class="error-message">Safari не может открыть страницу «‎172.26.7.119:3000/datahub», так как Safari не удается подключиться к серверу «172.26.7.119».</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body></html>

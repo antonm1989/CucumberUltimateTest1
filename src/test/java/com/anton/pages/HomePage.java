@@ -13,6 +13,7 @@ public class HomePage extends PageObject {
         $(ILocators.USERNAME_FIELD).sendKeys(arg0);
         $(ILocators.PASSWORD_FIELD).clear();
         $(ILocators.PASSWORD_FIELD).sendKeys(arg1);
+       // waitABit(3000);
         $(ILocators.LOGIN_BUTTON).click();
     }
 

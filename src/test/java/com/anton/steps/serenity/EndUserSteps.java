@@ -1,5 +1,6 @@
 package com.anton.steps.serenity;
 
+import com.anton.pages.ConnectionsPage;
 import com.anton.pages.DictionaryPage;
 import com.anton.pages.HomePage;
 import net.thucydides.core.annotations.Step;
@@ -14,6 +15,7 @@ public class EndUserSteps {
 
     //DictionaryPage dictionaryPage;
     HomePage homePage;
+    ConnectionsPage connectionsPage;
 
 //    @Step
 //    public void enters(String keyword) {
@@ -59,5 +61,24 @@ public class EndUserSteps {
     @Step
     public void userShouldSeeHomeLogo() {
         Assert.assertTrue("Home logo is not present",homePage.userShouldSeeHomeLogo());
+    }
+
+
+    @Step
+    public void userShouldSeeSourcesButton() {
+        Assert.assertTrue("Sources button is not present", connectionsPage.userShouldSeeSourcesButton());
+    }
+
+    @Step
+    public void userClicksOnSourcesButton() {
+        connectionsPage.userClicksOnSourcesButton();
+    }
+
+    public void userShouldSeeConnectionsPage(String arg0) {
+        connectionsPage.getDriver().get(arg0);
+    }
+
+    public void userShouldSeeCreateNewSourceButton() {
+        Assert.assertTrue("Create New Source button is not present", connectionsPage.userShouldSeeCreateNewSourceButton());
     }
 }

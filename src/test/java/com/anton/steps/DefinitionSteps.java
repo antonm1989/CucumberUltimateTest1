@@ -53,4 +53,27 @@ public class DefinitionSteps {
     public void userShouldSeeHomeLogo() throws Throwable {
         steps.userShouldSeeHomeLogo();
     }
+
+    @When("^user clicks on Sources button$")
+    public void userClicksOnSourcesButton() throws Throwable {
+       steps.userClicksOnSourcesButton();
+
+    }
+
+    @Then("^user should see Sources button$")
+    public void userShouldSeeSourcesButton() throws Throwable {
+        steps.userShouldSeeSourcesButton();
+
+    }
+
+    @Then("^user should see Connections page \"([^\"]*)\"$")
+    public void userShouldSeeConnectionsPage(String arg0) throws Throwable {
+        steps.userShouldSeeConnectionsPage(arg0);
+
+    }
+
+    @Then("^user should see Create New Source button$")
+    public void userShouldSeeCreateNewSourceButton() throws Throwable {
+      steps.userShouldSeeCreateNewSourceButton();
+    }
 }

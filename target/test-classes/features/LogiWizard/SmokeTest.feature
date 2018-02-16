@@ -13,9 +13,13 @@ Feature: Setup data in datahub admin
     Then user should see the home page "http://172.26.7.119:3000/datahub/Account/Login"
     When user perform login with "admin" and "password"
     Then user should see home logo
-    Given the user is on the home page "http://172.26.7.119:3000/datahub"
+
+  # Scenario: Create connection
+  #  Given the user is on the home page "http://172.26.7.119:3000/datahub"
     Then user should see Sources button
     When user clicks on Sources button
     Then user should see Connections page "http://172.26.7.119:3000/datahub/Connections"
     Then user should see Create New Source button
+    When user clicks Create New Source button
+    Then user should see Add Source window
 

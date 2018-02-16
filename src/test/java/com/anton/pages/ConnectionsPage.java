@@ -11,11 +11,19 @@ public class ConnectionsPage extends PageObject {
 
     public void userClicksOnSourcesButton() {
         $(ILocators.SOURCES_BUTTON).click();
-        waitABit(3000);
+      //  waitABit(3000);
     }
 
     public boolean userShouldSeeCreateNewSourceButton() {
         return $(ILocators.CREATE_NEW_SOURCE_BUTTON).isPresent();
+    }
+
+    public void userClicksCreateNewSourceButton() {
+        $(ILocators.CREATE_NEW_SOURCE_BUTTON).click();
+    }
+
+    public boolean userShouldSeeAddSourceWindow() {
+        return $(ILocators.ADD_SOURCE_WINDOW).isPresent();
     }
 }
 

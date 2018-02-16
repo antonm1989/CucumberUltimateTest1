@@ -73,12 +73,20 @@ public class EndUserSteps {
     public void userClicksOnSourcesButton() {
         connectionsPage.userClicksOnSourcesButton();
     }
-
+    @Step
     public void userShouldSeeConnectionsPage(String arg0) {
         connectionsPage.getDriver().get(arg0);
     }
-
+    @Step
     public void userShouldSeeCreateNewSourceButton() {
         Assert.assertTrue("Create New Source button is not present", connectionsPage.userShouldSeeCreateNewSourceButton());
+    }
+    @Step
+    public void userClicksCreateNewSourceButton() {
+        connectionsPage.userClicksCreateNewSourceButton();
+    }
+    @Step
+    public void userShouldSeeAddSourceWindow() {
+        Assert.assertTrue("Add Source window is not present", connectionsPage.userShouldSeeAddSourceWindow());
     }
 }

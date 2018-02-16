@@ -76,4 +76,14 @@ public class DefinitionSteps {
     public void userShouldSeeCreateNewSourceButton() throws Throwable {
       steps.userShouldSeeCreateNewSourceButton();
     }
+
+    @When("^user clicks Create New Source button$")
+    public void userClicksCreateNewSourceButton() throws Throwable {
+       steps.userClicksCreateNewSourceButton();
+    }
+
+    @Then("^user should see Add Source window$")
+    public void userShouldSeeAddSourceWindow() throws Throwable {
+        steps.userShouldSeeAddSourceWindow();
+    }
 }

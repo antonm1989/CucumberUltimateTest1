@@ -14,20 +14,6 @@ public class DefinitionSteps {
     @Steps
     EndUserSteps steps;
 
-//    @Given("the user is on the Wikionary home page")
-//    public void givenTheUserIsOnTheWikionaryHomePage() {
-//        steps.is_the_home_page();
-//    }
-//
-//    @When("the user looks up the definition of the word '(.*)'")
-//    public void whenTheUserLooksUpTheDefinitionOf(String word) {
-//        steps.looks_for(word);
-//    }
-//
-//    @Then("they should see the definition '(.*)'")
-//    public void thenTheyShouldSeeADefinitionContainingTheWords(String definition) {
-//        steps.should_see_definition(definition);
-//    }
 
     @Given("^the user is on the home page \"([^\"]*)\"$")
     public void theUserIsOnTheHomePage(String arg0) throws Throwable {

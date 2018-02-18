@@ -1,0 +1,4 @@
+target/site/serenity/browser-chrome.properties
+*.html
+*.json
+*.xml

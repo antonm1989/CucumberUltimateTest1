@@ -11,7 +11,6 @@ public class ConnectionsPage extends PageObject {
 
     public void userClicksOnSourcesButton() {
         $(ILocators.SOURCES_BUTTON).click();
-      //  waitABit(3000);
     }
 
     public boolean userShouldSeeCreateNewSourceButton() {

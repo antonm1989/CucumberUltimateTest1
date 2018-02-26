@@ -3,7 +3,7 @@ package com.anton.pages;
 import com.anton.ILocators;
 import net.thucydides.core.pages.PageObject;
 
-public class HomePage extends PageObject {
+public class LoginPage extends PageObject {
     public boolean userShouldSeeLoginButton() {
         return $(ILocators.LOGIN_BUTTON).isPresent();
     }

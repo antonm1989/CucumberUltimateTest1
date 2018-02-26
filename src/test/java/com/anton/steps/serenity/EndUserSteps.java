@@ -19,8 +19,8 @@ public class EndUserSteps {
         loginPage.getDriver().get(arg0);
     }
     @Step
-    public void userShouldSeeTheHomePage(String arg0) {
-        Assert.assertEquals("this is not the home page", loginPage.getDriver().getCurrentUrl(),arg0);
+    public void userShouldSeeTheLoginPage(String arg0) {
+        Assert.assertEquals("this is not the login page", loginPage.getDriver().getCurrentUrl(),arg0);
     }
     @Step
     public void userShouldSeeLoginButton() {

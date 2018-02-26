@@ -1,6 +1,5 @@
 package com.anton.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
@@ -20,9 +19,9 @@ public class DefinitionSteps {
         steps.theUserIsOnTheHomePage(arg0);
     }
 
-    @Then("^user should see the home page \"([^\"]*)\"$")
-    public void userShouldSeeTheHomePage(String arg0) throws Throwable {
-        steps.userShouldSeeTheHomePage(arg0);
+    @Then("^user should see the login page \"([^\"]*)\"$")
+    public void userShouldSeeTheLoginPage(String arg0) throws Throwable {
+        steps.userShouldSeeTheLoginPage(arg0);
     }
 
     @And("^user should see login button$")

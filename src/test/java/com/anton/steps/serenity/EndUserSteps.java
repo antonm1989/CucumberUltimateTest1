@@ -1,7 +1,7 @@
 package com.anton.steps.serenity;
 
 import com.anton.pages.ConnectionsPage;
-import com.anton.pages.HomePage;
+import com.anton.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
@@ -10,29 +10,29 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class EndUserSteps {
 
-    HomePage homePage;
+    LoginPage loginPage;
     ConnectionsPage connectionsPage;
 
 
     @Step
     public void theUserIsOnTheHomePage(String arg0) {
-        homePage.getDriver().get(arg0);
+        loginPage.getDriver().get(arg0);
     }
     @Step
-    public void userShouldSeeTheHomePage(String arg0) {
-        Assert.assertEquals("this is not the home page", homePage.getDriver().getCurrentUrl(),arg0);
+    public void userShouldSeeTheLoginPage(String arg0) {
+        Assert.assertEquals("this is not the login page", loginPage.getDriver().getCurrentUrl(),arg0);
     }
     @Step
     public void userShouldSeeLoginButton() {
-        Assert.assertTrue("Login button is not present",homePage.userShouldSeeLoginButton());
+        Assert.assertTrue("Login button is not present", loginPage.userShouldSeeLoginButton());
     }
     @Step
     public void userPerformLoginWithAnd(String arg0, String arg1) {
-        homePage.userPerformLoginWithAnd(arg0,arg1);
+        loginPage.userPerformLoginWithAnd(arg0,arg1);
     }
     @Step
     public void userShouldSeeHomeLogo() {
-        Assert.assertTrue("Home logo is not present",homePage.userShouldSeeHomeLogo());
+        Assert.assertTrue("Home logo is not present", loginPage.userShouldSeeHomeLogo());
     }
 
 
@@ -60,5 +60,25 @@ public class EndUserSteps {
     @Step
     public void userShouldSeeAddSourceWindow() {
         Assert.assertTrue("Add Source window is not present", connectionsPage.userShouldSeeAddSourceWindow());
+    }
+    @Step
+    public void userShouldSeeSelectDataProviderDropdown() {
+        Assert.assertTrue("Select Data Provider dropdown is not present", connectionsPage.userShouldSeeSelectDataProviderDropdown());
+    }
+    @Step
+    public void userClicksOnSelectDataProviderDropdown() {
+        connectionsPage.userClicksOnSelectDataProviderDropdown();
+    }
+    @Step
+    public void userShouldSeeSQLServerOption() {
+        Assert.assertTrue("SQL Server option is not present", connectionsPage.userShouldSeeSQLServerOption());
+    }
+    @Step
+    public void userClicksOnSQLServerOption() {
+        connectionsPage.userClicksOnSQLServerOption();
+    }
+    @Step
+    public void userShouldSeeSQLServerOptionSelected() {
+        Assert.assertTrue("SQL Server option is not selected", connectionsPage.userShouldSeeSQLServerOptionSelected());
     }
 }

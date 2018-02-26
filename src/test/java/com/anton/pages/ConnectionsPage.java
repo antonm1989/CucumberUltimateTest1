@@ -24,6 +24,27 @@ public class ConnectionsPage extends PageObject {
     public boolean userShouldSeeAddSourceWindow() {
         return $(ILocators.ADD_SOURCE_WINDOW).isPresent();
     }
+
+    public boolean userShouldSeeSelectDataProviderDropdown() {
+        return $(ILocators.DATA_PROVIDER_DROPDOWN).isPresent();
+    }
+
+    public void userClicksOnSelectDataProviderDropdown() {
+        $(ILocators.DATA_PROVIDER_DROPDOWN).click();
+    }
+
+    public boolean userShouldSeeSQLServerOption() {
+        return $(ILocators.SQL_SERVER_OPTION).isPresent();
+    }
+
+    public void userClicksOnSQLServerOption() {
+        $(ILocators.SQL_SERVER_OPTION).click();
+    }
+
+
+    public boolean userShouldSeeSQLServerOptionSelected() {
+        return $(ILocators.SQL_SERVER_SELECTED_OPTION).isVisible();
+    }
 }
 
 

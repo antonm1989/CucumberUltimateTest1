@@ -61,4 +61,24 @@ public class EndUserSteps {
     public void userShouldSeeAddSourceWindow() {
         Assert.assertTrue("Add Source window is not present", connectionsPage.userShouldSeeAddSourceWindow());
     }
+    @Step
+    public void userShouldSeeSelectDataProviderDropdown() {
+        Assert.assertTrue("Select Data Provider dropdown is not present", connectionsPage.userShouldSeeSelectDataProviderDropdown());
+    }
+    @Step
+    public void userClicksOnSelectDataProviderDropdown() {
+        connectionsPage.userClicksOnSelectDataProviderDropdown();
+    }
+    @Step
+    public void userShouldSeeSQLServerOption() {
+        Assert.assertTrue("SQL Server option is not present", connectionsPage.userShouldSeeSQLServerOption());
+    }
+    @Step
+    public void userClicksOnSQLServerOption() {
+        connectionsPage.userClicksOnSQLServerOption();
+    }
+    @Step
+    public void userShouldSeeSQLServerOptionSelected() {
+        Assert.assertTrue("SQL Server option is not selected", connectionsPage.userShouldSeeSQLServerOptionSelected());
+    }
 }

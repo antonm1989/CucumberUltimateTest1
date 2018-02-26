@@ -17,6 +17,11 @@ Feature: Setup data in datahub admin
     Then user should see Create New Source button
     When user clicks Create New Source button
     Then user should see Add Source window
+    Then user should see Select Data Provider dropdown
+    When user clicks on Select Data Provider dropdown
+    Then user should see SQL Server option
+    When user clicks on SQL Server option
+    Then user should see SQL Server option selected
 
     
 

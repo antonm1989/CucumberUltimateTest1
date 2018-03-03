@@ -23,5 +23,5 @@ Feature: Setup data in datahub admin
     When user clicks on SQL Server option
     Then user should see SQL Server option selected
 
-    
+
 

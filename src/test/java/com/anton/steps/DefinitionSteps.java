@@ -103,4 +103,80 @@ public class DefinitionSteps {
     public void userShouldSeeConnectionNameField() throws Throwable {
         steps.userShouldSeeConnectionNameField();
     }
+
+
+    @When("^user enters Connection Name as \"([^\"]*)\"$")
+    public void userEntersConnectionNameAs(String arg0) throws Throwable {
+        steps.userEntersConnectionNameAs(arg0);
+    }
+
+    @When("^user enters Server Name as \"([^\"]*)\"$")
+    public void userEntersServerNameAs(String arg0) throws Throwable {
+        steps.userEntersServerNameAs(arg0);
+    }
+
+    @When("^user enters User Name as \"([^\"]*)\"$")
+    public void userEntersUserNameAs(String arg0) throws Throwable {
+        steps.userEntersUserNameAs(arg0);
+    }
+
+    @When("^user enters Password as \"([^\"]*)\"$")
+    public void userEntersPasswordAs(String arg0) throws Throwable {
+        steps.userEntersPasswordAs(arg0);
+    }
+
+    @When("^user click Get Databases button$")
+    public void userClickGetDatabasesButton() throws Throwable {
+       steps.userClickGetDatabasesButton();
+    }
+
+    @Then("^user should see Database Name selector$")
+    public void userShouldSeeDatabaseNameSelector() throws Throwable {
+        steps.userShouldSeeDatabaseNameSelector();
+    }
+
+    @When("^user clicks on Database Name selector$")
+    public void userClicksOnDatabaseNameSelector() throws Throwable {
+       steps.userClicksOnDatabaseNameSelector();
+    }
+
+    @Then("^user should see NGP option$")
+    public void userShouldSeeNGPOption() throws Throwable {
+        steps.userShouldSeeNGPOption();
+    }
+
+    @When("^user selects NGP option$")
+    public void userSelectsNGPOption() throws Throwable {
+      steps.userSelectsNGPOption();
+    }
+
+    @Then("^user should see that NGP option is selected$")
+    public void userShouldSeeThatNGPOptionIsSelected() throws Throwable {
+        steps.userShouldSeeThatNGPOptionIsSelected();
+    }
+
+    @Then("^user should see that Port Number is set to \"([^\"]*)\"$")
+    public void userShouldSeeThatPortNumberIsSetTo(String arg0) throws Throwable {
+        steps.userShouldSeeThatPortNumberIsSetTo(arg0);
+    }
+
+    @When("^user click Test Source button$")
+    public void userClickTestSourceButton() throws Throwable {
+        steps.userClickTestSourceButton();
+    }
+
+    @Then("^user should see Successful Test Confirmation message$")
+    public void userShouldSeeSuccessfulTestConfirmationMessage() throws Throwable {
+        steps.userShouldSeeSuccessfulTestConfirmationMessage();
+    }
+
+    @When("^user clicks on Save button$")
+    public void userClicksOnSaveButton() throws Throwable {
+        steps.userClicksOnSaveButton();
+    }
+
+    @Then("^user should see created connection$")
+    public void userShouldSeeCreatedConnection() throws Throwable {
+        steps.userShouldSeeCreatedConnection();
+    }
 }

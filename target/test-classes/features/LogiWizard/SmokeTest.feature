@@ -23,6 +23,22 @@ Feature: Setup data in datahub admin
     When user clicks on SQL Server option
     Then user should see SQL Server option selected
     Then user should see Connection Name field
+    When user enters Connection Name as "QASQL2K8"
+    When user enters Server Name as "QASQL2K8"
+    When user enters User Name as "sa"
+    When user enters Password as "LGXpass"
+    When user click Get Databases button
+    Then user should see Database Name selector
+    When user clicks on Database Name selector
+    Then user should see NGP option
+    When user selects NGP option
+    Then user should see that NGP option is selected
+    #Then user should see that Port Number is set to "1433"
+    When user click Test Source button
+    Then user should see Successful Test Confirmation message
+    When user clicks on Save button
+    Then user should see created connection
+
 
 
 

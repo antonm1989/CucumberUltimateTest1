@@ -85,6 +85,63 @@ public class EndUserSteps {
     }
     @Step
     public void userShouldSeeConnectionNameField() {
-        Assert.assertTrue("Connection Name field is not shown", connectionsPage.userShouldSeeConnectionNameField());
+        Assert.assertTrue("Connection Name field is not present", connectionsPage.userShouldSeeConnectionNameField());
+    }
+
+    @Step
+    public void userEntersConnectionNameAs(String arg0) {connectionsPage.userEntersConnectionNameAs(arg0);
+    }
+    @Step
+    public void userEntersServerNameAs(String arg0) {connectionsPage.userEntersServerNameAs(arg0);
+    }
+    @Step
+    public void userEntersUserNameAs(String arg0) {connectionsPage.userEntersUserNameAs(arg0);
+    }
+    @Step
+    public void userEntersPasswordAs(String arg0) {connectionsPage.userEntersPasswordAs(arg0);
+    }
+    @Step
+    public void userClickGetDatabasesButton() {connectionsPage.userClickGetDatabasesButton();
+    }
+    @Step
+    public void userShouldSeeDatabaseNameSelector() {
+        Assert.assertTrue("Database Selector is not present",connectionsPage.userShouldSeeDatabaseNameSelector());
+    }
+    @Step
+    public void userClicksOnDatabaseNameSelector() {
+        connectionsPage.waitForPresenceOf(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR);
+        connectionsPage.userClicksOnDatabaseNameSelector();
+    }
+    @Step
+    public void userShouldSeeNGPOption() {
+        Assert.assertTrue("NGP option is not present",connectionsPage.userShouldSeeNGPOption());
+    }
+    @Step
+    public void userSelectsNGPOption() {
+        connectionsPage.userSelectsNGPOption();
+    }
+    @Step
+    public void userShouldSeeThatNGPOptionIsSelected() {
+        Assert.assertTrue("NGP option is not selected",connectionsPage.userShouldSeeThatNGPOptionIsSelected());
+    }
+    @Step
+    public void userShouldSeeThatPortNumberIsSetTo(String arg0) {
+        Assert.assertTrue("Port Number is not set to 1433",connectionsPage.userShouldSeeThatPortNumberIsSetTo(arg0));
+    }
+    @Step
+    public void userClickTestSourceButton() {
+        connectionsPage.userClickTestSourceButton();
+    }
+    @Step
+    public void userShouldSeeSuccessfulTestConfirmationMessage() {
+        Assert.assertTrue("Successful Test message is not present",connectionsPage.userShouldSeeSuccessfulTestConfirmationMessage());
+    }
+    @Step
+    public void userClicksOnSaveButton() {
+        connectionsPage.userClicksOnSaveButton();
+    }
+    @Step
+    public void userShouldSeeCreatedConnection() {
+        Assert.assertTrue("Created connection is not present",connectionsPage.userShouldSeeCreatedConnection());
     }
 }

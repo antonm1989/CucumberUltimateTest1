@@ -98,4 +98,9 @@ public class DefinitionSteps {
         steps.userShouldSeeSQLServerOptionSelected();
 
     }
+
+    @Then("^user should see Connection Name field$")
+    public void userShouldSeeConnectionNameField() throws Throwable {
+        steps.userShouldSeeConnectionNameField();
+    }
 }

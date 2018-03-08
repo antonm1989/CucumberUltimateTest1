@@ -22,6 +22,7 @@ Feature: Setup data in datahub admin
     Then user should see SQL Server option
     When user clicks on SQL Server option
     Then user should see SQL Server option selected
+    Then user should see Connection Name field
 
 
 

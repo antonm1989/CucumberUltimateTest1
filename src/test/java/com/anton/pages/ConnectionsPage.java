@@ -45,6 +45,10 @@ public class ConnectionsPage extends PageObject {
     public boolean userShouldSeeSQLServerOptionSelected() {
         return $(ILocators.SQL_SERVER_SELECTED_OPTION).isVisible();
     }
+
+    public boolean userShouldSeeConnectionNameField() {
+        return $(ILocators.NEW_SOURCE_NAME_FIELD).isPresent();
+    }
 }
 
 

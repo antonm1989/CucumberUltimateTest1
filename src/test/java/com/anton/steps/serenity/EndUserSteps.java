@@ -1,5 +1,6 @@
 package com.anton.steps.serenity;
 
+import com.anton.ILocators;
 import com.anton.pages.ConnectionsPage;
 import com.anton.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
@@ -43,6 +44,7 @@ public class EndUserSteps {
 
     @Step
     public void userClicksOnSourcesButton() {
+        connectionsPage.waitForPresenceOf(ILocators.SOURCES_BUTTON);
         connectionsPage.userClicksOnSourcesButton();
     }
     @Step
@@ -80,5 +82,9 @@ public class EndUserSteps {
     @Step
     public void userShouldSeeSQLServerOptionSelected() {
         Assert.assertTrue("SQL Server option is not selected", connectionsPage.userShouldSeeSQLServerOptionSelected());
+    }
+    @Step
+    public void userShouldSeeConnectionNameField() {
+        Assert.assertTrue("Connection Name field is not shown", connectionsPage.userShouldSeeConnectionNameField());
     }
 }

@@ -129,7 +129,7 @@ public class EndUserSteps {
         Assert.assertTrue("Port Number is not set to 1433",connectionsPage.userShouldSeeThatPortNumberIsSetTo(arg0));
     }
     @Step
-    public void userClickTestSourceButton() {
+    public void userClicksTestSourceButton() {
         connectionsPage.userClickTestSourceButton();
     }
     @Step

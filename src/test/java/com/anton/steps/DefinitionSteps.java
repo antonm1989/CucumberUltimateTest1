@@ -1,6 +1,5 @@
 package com.anton.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
@@ -160,9 +159,9 @@ public class DefinitionSteps {
         steps.userShouldSeeThatPortNumberIsSetTo(arg0);
     }
 
-    @When("^user click Test Source button$")
-    public void userClickTestSourceButton() throws Throwable {
-        steps.userClickTestSourceButton();
+    @When("^user clicks Test Source button$")
+    public void userClicksTestSourceButton() throws Throwable {
+        steps.userClicksTestSourceButton();
     }
 
     @Then("^user should see Successful Test Confirmation message$")

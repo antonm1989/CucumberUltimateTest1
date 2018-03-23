@@ -47,6 +47,22 @@ Feature: Setup data in DH3 admin
     When user clicks on Save button
     Then user should see created connection
 
+    #When user hovers mouse over Dataviews menu
+
+
+    #When user clicks on Sources button
+    Then user should see Connection Settings Cog
+
+    When user hovers mouse over Connection Settings Cog
+    Then user should see Delete Menu Option
+
+    When user click Delete Menu Option
+    Then user should see Confirm Delete Dialog
+    And user should see Delete button
+
+    When user clicks Delete button
+    Then connection should be removed
+
 
 
 

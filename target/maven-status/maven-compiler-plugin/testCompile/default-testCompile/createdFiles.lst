@@ -1,0 +1,6 @@
+com/anton/DefinitionTestSuite.class
+com/anton/steps/DefinitionSteps.class
+com/anton/steps/serenity/EndUserSteps.class
+com/anton/ILocators.class
+com/anton/pages/LoginPage.class
+com/anton/pages/ConnectionsPage.class

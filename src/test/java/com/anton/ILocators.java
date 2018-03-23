@@ -1,5 +1,7 @@
 package com.anton;
 
+import org.yecht.Data;
+
 public interface ILocators {
     String LOGIN_BUTTON = "//button[@class='button brand-btn']";
     String USERNAME_FIELD="//input[@id='UserName']";
@@ -24,4 +26,14 @@ public interface ILocators {
     String NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE="//div[@class='alert success-message']";
     String NEW_CONNECTION_SAVE_BUTTON="//button/span[contains(text(),'Save')]";
     String CREATED_CONNECTION_TITLE="//h3[contains(text(),'QASQL2K8')]";
+    String DATAVIEWS_MAIN_MENU="//span[contains(text(),'Dataviews')]";
+    String CONNECTION_SETTINGS_COG="//div[@class='cardbox connections']/div/ul/li";
+    String CONNECTION_SETTINGS_DELETE_OPTION="//span[contains(text(),'Delete')]";
+    String CONFIRM_DELETE_DIALOG="//span[contains(text(),'Confirm Delete')]";
+    //String DELETE_BUTTON="//span[contains(text(),'Delete')]";
+    String DELETE_BUTTON="//button[2]";
+
+
+    //E1/[E2 and not( *[not(self::E2)])]
+
 }

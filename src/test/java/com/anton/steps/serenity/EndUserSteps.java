@@ -144,4 +144,40 @@ public class EndUserSteps {
     public void userShouldSeeCreatedConnection() {
         Assert.assertTrue("Created connection is not present",connectionsPage.userShouldSeeCreatedConnection());
     }
+    @Step
+    public void userHoversMouseOverDataviewsMenu() {
+        connectionsPage.userHoversMouseOverDataviewsMenu();
+    }
+    @Step
+    public void userShouldSeeConnectionSettingsCog() {
+        Assert.assertTrue("Connection Settings Cog is not present",connectionsPage.userShouldSeeConnectionSettingsCog());
+    }
+    @Step
+    public void userHoversMouseOverConnectionSettingsCog() {
+        connectionsPage.userHoversMouseOverConnectionSettingsCog();
+    }
+    @Step
+    public void userShouldSeeDeleteMenuOption() {
+        Assert.assertTrue("Delete option is not present",connectionsPage.userShouldSeeDeleteMenuOption());
+    }
+    @Step
+    public void userClickDeleteMenuOption() {
+        connectionsPage.userClickDeleteMenuOption();
+    }
+    @Step
+    public void userShouldSeeConfirmDeleteDialog() {
+        Assert.assertTrue("Confirm Delete dialog is not present",connectionsPage.userShouldSeeConfirmDeleteDialog());
+    }
+    @Step
+    public void userShouldSeeDeleteButton() {
+        Assert.assertTrue("Delete button is not present",connectionsPage.userShouldSeeDeleteButton());
+    }
+    @Step
+    public void userClicksDeleteButton() {
+        connectionsPage.userClicksDeleteButton();
+    }
+    @Step
+    public void connectionShouldBeRemoved() {
+        Assert.assertTrue("Connection is not removed",connectionsPage.connectionShouldBeRemoved());
+    }
 }

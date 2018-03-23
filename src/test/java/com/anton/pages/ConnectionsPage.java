@@ -3,9 +3,17 @@ package com.anton.pages;
 import net.thucydides.core.pages.PageObject;
 import com.anton.ILocators;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class ConnectionsPage extends PageObject {
+
+    //WebDriver driver = new ChromeDriver();
+
     public boolean userShouldSeeSourcesButton() {
         return $(ILocators.SOURCES_BUTTON).isPresent();
     }
@@ -128,6 +136,60 @@ public class ConnectionsPage extends PageObject {
     public boolean userShouldSeeCreatedConnection() {
         $(ILocators.CREATED_CONNECTION_TITLE).waitUntilPresent();
         return $(ILocators.CREATED_CONNECTION_TITLE).isPresent();
+
+    }
+
+    public void userHoversMouseOverDataviewsMenu() {
+        $(ILocators.DATAVIEWS_MAIN_MENU).waitUntilClickable();
+
+        WebElement dataviews_Main_Menu=$(ILocators.DATAVIEWS_MAIN_MENU).findBy(By.xpath(ILocators.DATAVIEWS_MAIN_MENU));
+        Actions builder = new Actions(getDriver());
+        builder.moveToElement(dataviews_Main_Menu).build().perform();
+
+        //waitABit(3000);
+    }
+
+    public boolean userShouldSeeConnectionSettingsCog() {
+        return $(ILocators.CONNECTION_SETTINGS_COG).isPresent();
+    }
+
+    public void userHoversMouseOverConnectionSettingsCog() {
+        WebElement connection_Settings_Cog=$(ILocators.CONNECTION_SETTINGS_COG).find(By.xpath(ILocators.CONNECTION_SETTINGS_COG));
+        Actions builder=new Actions(getDriver());
+        builder.moveToElement(connection_Settings_Cog).build().perform();
+        //waitABit(2000);
+    }
+
+
+    public boolean userShouldSeeDeleteMenuOption() {
+        $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).waitUntilPresent();
+        return $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).isPresent();
+    }
+
+    public void userClickDeleteMenuOption() {
+        $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).waitUntilClickable();
+        $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).click();
+    }
+
+    public boolean userShouldSeeConfirmDeleteDialog() {
+        $(ILocators.CONFIRM_DELETE_DIALOG).waitUntilPresent();
+        return $(ILocators.CONFIRM_DELETE_DIALOG).isPresent();
+    }
+
+    public boolean userShouldSeeDeleteButton() {
+        $(ILocators.DELETE_BUTTON).waitUntilPresent();
+        return $(ILocators.DELETE_BUTTON).isPresent();
+    }
+
+    public void userClicksDeleteButton() {
+        $(ILocators.DELETE_BUTTON).waitUntilPresent();
+        $(ILocators.DELETE_BUTTON).click();
+
+    }
+
+    public boolean connectionShouldBeRemoved() {
+        $(ILocators.CREATE_NEW_SOURCE_BUTTON).waitUntilPresent();
+        return !($(ILocators.CREATED_CONNECTION_TITLE).isPresent());
     }
 }
 

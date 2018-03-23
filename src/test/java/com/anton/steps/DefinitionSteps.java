@@ -1,5 +1,6 @@
 package com.anton.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
@@ -177,5 +178,52 @@ public class DefinitionSteps {
     @Then("^user should see created connection$")
     public void userShouldSeeCreatedConnection() throws Throwable {
         steps.userShouldSeeCreatedConnection();
+    }
+
+    @When("^user hovers mouse over Dataviews menu$")
+    public void userHoversMouseOverDataviewsMenu() throws Throwable {
+        steps.userHoversMouseOverDataviewsMenu();
+    }
+
+    @Then("^user should see Connection Settings Cog$")
+    public void userShouldSeeConnectionSettingsCog() throws Throwable {
+        steps.userShouldSeeConnectionSettingsCog();
+    }
+
+    @When("^user hovers mouse over Connection Settings Cog$")
+    public void userHoversMouseOverConnectionSettingsCog() throws Throwable {
+        steps.userHoversMouseOverConnectionSettingsCog();
+    }
+
+    @Then("^user should see Delete Menu Option$")
+    public void userShouldSeeDeleteMenuOption() throws Throwable {
+        steps.userShouldSeeDeleteMenuOption();
+    }
+
+    @When("^user click Delete Menu Option$")
+    public void userClickDeleteMenuOption() throws Throwable {
+        steps.userClickDeleteMenuOption();
+    }
+
+    @Then("^user should see Confirm Delete Dialog$")
+    public void userShouldSeeConfirmDeleteDialog() throws Throwable {
+        steps.userShouldSeeConfirmDeleteDialog();
+
+    }
+
+    @And("^user should see Delete button$")
+    public void userShouldSeeDeleteButton() throws Throwable {
+        steps.userShouldSeeDeleteButton();
+
+    }
+
+    @When("^user clicks Delete button$")
+    public void userClicksDeleteButton() throws Throwable {
+        steps.userClicksDeleteButton();
+    }
+
+    @Then("^connection should be removed$")
+    public void connectionShouldBeRemoved() throws Throwable {
+        steps.connectionShouldBeRemoved();
     }
 }

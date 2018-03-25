@@ -13,7 +13,18 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DataAcquisitionPage extends PageObject{
-    public void userShouldSeeCreateFromSourceButton() {
+
+    public boolean userShouldSeeCreateFromSourceButton() {
+        $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).waitUntilVisible();
         return $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).isVisible();
+    }
+
+    public void userClickCreateFromSourceButton() {
+        $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).click();
+    }
+
+    public boolean userShouldSeeConnectionName() {
+        $(ILocators.CREATED_CONNECTION_TITLE).waitUntilVisible();
+        return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
     }
 }

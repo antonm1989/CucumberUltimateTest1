@@ -186,18 +186,26 @@ public class EndUserSteps {
     public void userShouldSeeCreateANewDataviewOption() {
         Assert.assertTrue("Create a New Dataview option is not present", connectionsPage.userShouldSeeCreateANewDataviewOption());
     }
-
+    @Step
     public void userClicksCreateANewDataviewOption() {
         connectionsPage.userClicksCreateANewDataviewOption();
     }
 
-
+@Step
     public void userShouldSeeDataAcquisitionPage(String arg0) {
         dataAcquisitionPage.getDriver().get(arg0);
 
     }
-
+@Step
     public void userShouldSeeCreateFromSourceButton() {
-        dataAcquisitionPage.userShouldSeeCreateFromSourceButton();
+        Assert.assertTrue("Create From Source button is not present", dataAcquisitionPage.userShouldSeeCreateFromSourceButton());
+    }
+
+    public void userClickCreateFromSourceButton() {
+        dataAcquisitionPage.userClickCreateFromSourceButton();
+    }
+
+    public void userShouldSeeConnectionName() {
+        Assert.assertTrue("Connection name is not present",dataAcquisitionPage.userShouldSeeConnectionName());
     }
 }

@@ -248,4 +248,14 @@ public class DefinitionSteps {
     public void userShouldSeeCreateFromSourceButton() throws Throwable {
         steps.userShouldSeeCreateFromSourceButton();
     }
+
+    @When("^user click Create From Source button$")
+    public void userClickCreateFromSourceButton() throws Throwable {
+        steps.userClickCreateFromSourceButton();
+    }
+
+    @Then("^user should see Connection name$")
+    public void userShouldSeeConnectionName() throws Throwable {
+        steps.userShouldSeeConnectionName();
+    }
 }

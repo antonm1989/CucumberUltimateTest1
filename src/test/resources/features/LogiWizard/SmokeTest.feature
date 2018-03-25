@@ -54,6 +54,9 @@ Feature: Setup data in DH3 admin
     Then user should see DataAcquisition page "http://localhost:3000/Datahub/DataAcquisition"
     And user should see Create From Source button
 
+    When user click Create From Source button
+    Then user should see Connection name
+
 
     #When user clicks on Sources button
     #Then user should see Connections page "http://localhost:3000/datahub/Connections"

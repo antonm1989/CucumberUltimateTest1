@@ -5,7 +5,7 @@ import net.thucydides.core.pages.PageObject;
 
 public class LoginPage extends PageObject {
     public boolean userShouldSeeLoginButton() {
-        return $(ILocators.LOGIN_BUTTON).isPresent();
+        return $(ILocators.LOGIN_BUTTON).isVisible();
     }
 
     public void userPerformLoginWithAnd(String arg0, String arg1) {
@@ -17,6 +17,6 @@ public class LoginPage extends PageObject {
     }
 
     public boolean userShouldSeeHomeLogo() {
-        return $(ILocators.HOME_LOGO).isPresent();
+        return $(ILocators.HOME_LOGO).isVisible();
     }
 }

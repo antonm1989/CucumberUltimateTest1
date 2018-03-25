@@ -226,4 +226,26 @@ public class DefinitionSteps {
     public void connectionShouldBeRemoved() throws Throwable {
         steps.connectionShouldBeRemoved();
     }
+
+    @Then("^user should see Create A New Dataview option$")
+    public void userShouldSeeCreateANewDataviewOption() throws Throwable {
+        steps.userShouldSeeCreateANewDataviewOption();
+
+    }
+
+    @When("^user clicks Create A New Dataview option$")
+    public void userClicksCreateANewDataviewOption() throws Throwable {
+        steps.userClicksCreateANewDataviewOption();
+
+    }
+
+    @Then("^user should see DataAcquisition page \"([^\"]*)\"$")
+    public void userShouldSeeDataAcquisitionPage(String arg0) throws Throwable {
+        steps.userShouldSeeDataAcquisitionPage(arg0);
+    }
+
+    @And("^user should see Create From Source button$")
+    public void userShouldSeeCreateFromSourceButton() throws Throwable {
+        steps.userShouldSeeCreateFromSourceButton();
+    }
 }

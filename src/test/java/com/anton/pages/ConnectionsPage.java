@@ -8,14 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class ConnectionsPage extends PageObject {
 
-    //WebDriver driver = new ChromeDriver();
 
     public boolean userShouldSeeSourcesButton() {
-        return $(ILocators.SOURCES_BUTTON).isPresent();
+        return $(ILocators.SOURCES_BUTTON).isVisible();
     }
 
     public void userClicksOnSourcesButton() {
@@ -25,7 +26,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeCreateNewSourceButton() {
-        return $(ILocators.CREATE_NEW_SOURCE_BUTTON).isPresent();
+        return $(ILocators.CREATE_NEW_SOURCE_BUTTON).isVisible();
     }
 
     public void userClicksCreateNewSourceButton() {
@@ -34,11 +35,11 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeAddSourceWindow() {
-        return $(ILocators.ADD_SOURCE_WINDOW).isPresent();
+        return $(ILocators.ADD_SOURCE_WINDOW).isVisible();
     }
 
     public boolean userShouldSeeSelectDataProviderDropdown() {
-        return $(ILocators.DATA_PROVIDER_DROPDOWN).isPresent();
+        return $(ILocators.DATA_PROVIDER_DROPDOWN).isVisible();
     }
 
     public void userClicksOnSelectDataProviderDropdown() {
@@ -46,7 +47,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeSQLServerOption() {
-        return $(ILocators.SQL_SERVER_OPTION).isPresent();
+        return $(ILocators.SQL_SERVER_OPTION).isVisible();
     }
 
     public void userClicksOnSQLServerOption() {
@@ -59,7 +60,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeConnectionNameField() {
-        return $(ILocators.NEW_CONNECTION_SOURCE_NAME_FIELD).isPresent();
+        return $(ILocators.NEW_CONNECTION_SOURCE_NAME_FIELD).isVisible();
     }
 
     public void userEntersConnectionNameAs(String arg0) {
@@ -91,7 +92,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeDatabaseNameSelector() {
-        return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isPresent();
+        return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isVisible();
     }
 
     public void userClicksOnDatabaseNameSelector() {
@@ -101,7 +102,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeNGPOption() {
-        return $(ILocators.NEW_CONNECTION_DATABASE_SELECTOR_NGP_OPTION).isPresent();
+        return $(ILocators.NEW_CONNECTION_DATABASE_SELECTOR_NGP_OPTION).isVisible();
     }
 
     public void userSelectsNGPOption() {
@@ -114,7 +115,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeThatPortNumberIsSetTo(String arg0) {
-        $(ILocators.NEW_CONNECTION_PORT_NUMBER_FIELD).waitUntilPresent();
+        $(ILocators.NEW_CONNECTION_PORT_NUMBER_FIELD).waitUntilVisible();
         return $(ILocators.NEW_CONNECTION_PORT_NUMBER_FIELD).getText().contains(arg0);
     }
 
@@ -124,8 +125,8 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeSuccessfulTestConfirmationMessage() {
-        $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).waitUntilPresent();
-        return $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).isPresent();
+        $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).waitUntilVisible();
+        return $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).isVisible();
     }
 
     public void userClicksOnSaveButton() {
@@ -134,8 +135,8 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeCreatedConnection() {
-        $(ILocators.CREATED_CONNECTION_TITLE).waitUntilPresent();
-        return $(ILocators.CREATED_CONNECTION_TITLE).isPresent();
+        $(ILocators.CREATED_CONNECTION_TITLE).waitUntilVisible();
+        return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
 
     }
 
@@ -145,25 +146,22 @@ public class ConnectionsPage extends PageObject {
         WebElement dataviews_Main_Menu=$(ILocators.DATAVIEWS_MAIN_MENU).findBy(By.xpath(ILocators.DATAVIEWS_MAIN_MENU));
         Actions builder = new Actions(getDriver());
         builder.moveToElement(dataviews_Main_Menu).build().perform();
-
-        //waitABit(3000);
     }
 
     public boolean userShouldSeeConnectionSettingsCog() {
-        return $(ILocators.CONNECTION_SETTINGS_COG).isPresent();
+        return $(ILocators.CONNECTION_SETTINGS_COG).isVisible();
     }
 
     public void userHoversMouseOverConnectionSettingsCog() {
         WebElement connection_Settings_Cog=$(ILocators.CONNECTION_SETTINGS_COG).find(By.xpath(ILocators.CONNECTION_SETTINGS_COG));
         Actions builder=new Actions(getDriver());
         builder.moveToElement(connection_Settings_Cog).build().perform();
-        //waitABit(2000);
     }
 
 
     public boolean userShouldSeeDeleteMenuOption() {
-        $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).waitUntilPresent();
-        return $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).isPresent();
+        $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).waitUntilVisible();
+        return $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).isVisible();
     }
 
     public void userClickDeleteMenuOption() {
@@ -172,24 +170,32 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeConfirmDeleteDialog() {
-        $(ILocators.CONFIRM_DELETE_DIALOG).waitUntilPresent();
-        return $(ILocators.CONFIRM_DELETE_DIALOG).isPresent();
+        $(ILocators.CONFIRM_DELETE_DIALOG).waitUntilVisible();
+        return $(ILocators.CONFIRM_DELETE_DIALOG).isVisible();
     }
 
     public boolean userShouldSeeDeleteButton() {
-        $(ILocators.DELETE_BUTTON).waitUntilPresent();
-        return $(ILocators.DELETE_BUTTON).isPresent();
+        $(ILocators.DELETE_BUTTON).waitUntilVisible();
+        return $(ILocators.DELETE_BUTTON).isVisible();
     }
 
     public void userClicksDeleteButton() {
-        $(ILocators.DELETE_BUTTON).waitUntilPresent();
-        $(ILocators.DELETE_BUTTON).click();
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.DELETE_BUTTON))).
+                clickOn($(ILocators.DELETE_BUTTON));
 
     }
 
     public boolean connectionShouldBeRemoved() {
-        $(ILocators.CREATE_NEW_SOURCE_BUTTON).waitUntilPresent();
-        return !($(ILocators.CREATED_CONNECTION_TITLE).isPresent());
+        $(ILocators.DELETE_BUTTON).waitUntilNotVisible();
+        return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
+    }
+
+    public boolean userShouldSeeCreateANewDataviewOption() {
+        return $(ILocators.CREATE_A_NEW_DATAVIEW_OPTION).isVisible();
+    }
+
+    public void userClicksCreateANewDataviewOption() {
+        $(ILocators.CREATE_A_NEW_DATAVIEW_OPTION).click();
     }
 }
 

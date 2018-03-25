@@ -8,7 +8,7 @@ public interface ILocators {
     String PASSWORD_FIELD="//input[@id='Password']";
     String HOME_LOGO="//span[@class='logi-font icon-datahub']";
     String SOURCES_BUTTON="//span[@data-bind=\"text:i18n('sources.label')\"]";
-    String SOURCES_ICON="//span[@class=\"logi-font icon-sources\"]";
+    //String SOURCES_ICON="//span[@class=\"logi-font icon-sources\"]";
     String CREATE_NEW_SOURCE_BUTTON="//span[@data-bind=\"text: i18nTitle('connections.home.createNewConnectionLabel')\"]";
     String ADD_SOURCE_WINDOW="//span[contains(text(),'Add Source')]";
     String DATA_PROVIDER_DROPDOWN="//select[@id='selectDataProvider']";
@@ -30,10 +30,14 @@ public interface ILocators {
     String CONNECTION_SETTINGS_COG="//div[@class='cardbox connections']/div/ul/li";
     String CONNECTION_SETTINGS_DELETE_OPTION="//span[contains(text(),'Delete')]";
     String CONFIRM_DELETE_DIALOG="//span[contains(text(),'Confirm Delete')]";
-    //String DELETE_BUTTON="//span[contains(text(),'Delete')]";
-    String DELETE_BUTTON="//button[2]";
+
+    String DELETE_BUTTON="//button/span[contains(text(),'Delete')]";
+    //String DELETE_BUTTON="//button/[//span[contains(text(),'Delete')] and not( *[not(self:://span[contains(text(),'Delete')])])]";
+
+    String CREATE_A_NEW_DATAVIEW_OPTION="//b[contains(text(),'Create a New Dataview')]";
+    String CREATE_DATAVIEW_FROM_SOURCE_BUTTON="//span[contains(text(),'From Source')]";
 
 
-    //E1/[E2 and not( *[not(self::E2)])]
+
 
 }

@@ -2,6 +2,7 @@ package com.anton.steps.serenity;
 
 import com.anton.ILocators;
 import com.anton.pages.ConnectionsPage;
+import com.anton.pages.DataAcquisitionPage;
 import com.anton.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
@@ -13,6 +14,7 @@ public class EndUserSteps {
 
     LoginPage loginPage;
     ConnectionsPage connectionsPage;
+    DataAcquisitionPage dataAcquisitionPage;
 
 
     @Step
@@ -178,6 +180,24 @@ public class EndUserSteps {
     }
     @Step
     public void connectionShouldBeRemoved() {
-        Assert.assertTrue("Connection is not removed",connectionsPage.connectionShouldBeRemoved());
+        Assert.assertFalse("Connection is not removed",connectionsPage.connectionShouldBeRemoved());
+    }
+    @Step
+    public void userShouldSeeCreateANewDataviewOption() {
+        Assert.assertTrue("Create a New Dataview option is not present", connectionsPage.userShouldSeeCreateANewDataviewOption());
+    }
+
+    public void userClicksCreateANewDataviewOption() {
+        connectionsPage.userClicksCreateANewDataviewOption();
+    }
+
+
+    public void userShouldSeeDataAcquisitionPage(String arg0) {
+        dataAcquisitionPage.getDriver().get(arg0);
+
+    }
+
+    public void userShouldSeeCreateFromSourceButton() {
+        dataAcquisitionPage.userShouldSeeCreateFromSourceButton();
     }
 }

@@ -258,4 +258,25 @@ public class DefinitionSteps {
     public void userShouldSeeConnectionName() throws Throwable {
         steps.userShouldSeeConnectionName();
     }
+
+    @When("^user clicks on Connection name$")
+    public void userClicksOnConnectionName() throws Throwable {
+        steps.userClicksOnConnectionName();
+    }
+
+    @Then("^user should see Connection Objects$")
+    public void userShouldSeeConnectionObjects() throws Throwable {
+        steps.userShouldSeeConnectionObjects();
+    }
+
+    @When("^user enters table name \"([^\"]*)\" is Search field$")
+    public void userEntersTableNameIsSearchField(String arg0) throws Throwable {
+       steps.userEntersTableNameIsSearchField(arg0);
+    }
+
+    @Then("^user should see Orders table in filter results$")
+    public void userShouldSeeOrdersTableInFilterResults() throws Throwable {
+        steps.userShouldSeeOrdersTableInFilterResults();
+
+    }
 }

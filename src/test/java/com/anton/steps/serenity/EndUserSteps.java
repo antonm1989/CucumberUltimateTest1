@@ -191,21 +191,37 @@ public class EndUserSteps {
         connectionsPage.userClicksCreateANewDataviewOption();
     }
 
-@Step
+    @Step
     public void userShouldSeeDataAcquisitionPage(String arg0) {
         dataAcquisitionPage.getDriver().get(arg0);
 
     }
-@Step
+    @Step
     public void userShouldSeeCreateFromSourceButton() {
         Assert.assertTrue("Create From Source button is not present", dataAcquisitionPage.userShouldSeeCreateFromSourceButton());
     }
-
+    @Step
     public void userClickCreateFromSourceButton() {
         dataAcquisitionPage.userClickCreateFromSourceButton();
     }
-
+    @Step
     public void userShouldSeeConnectionName() {
         Assert.assertTrue("Connection name is not present",dataAcquisitionPage.userShouldSeeConnectionName());
+    }
+    @Step
+    public void userClicksOnConnectionName() {
+        dataAcquisitionPage.userClicksOnConnectionName();
+    }
+    @Step
+    public void userShouldSeeConnectionObjects() {
+        Assert.assertTrue("Connection Objects Title is not present", dataAcquisitionPage.userShouldSeeConnectionObjects());
+    }
+    @Step
+    public void userEntersTableNameIsSearchField(String arg0) {
+        dataAcquisitionPage.userEntersTableNameIsSearchField(arg0);
+    }
+    @Step
+    public void userShouldSeeOrdersTableInFilterResults() {
+        Assert.assertTrue("dbo.Orders table is not present in resultset",dataAcquisitionPage.userShouldSeeOrdersTableInFilterResults());
     }
 }

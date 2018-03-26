@@ -27,4 +27,25 @@ public class DataAcquisitionPage extends PageObject{
         $(ILocators.CREATED_CONNECTION_TITLE).waitUntilVisible();
         return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
     }
+
+    public void userClicksOnConnectionName() {
+        $(ILocators.CREATED_CONNECTION_TITLE).click();
+    }
+
+    public boolean userShouldSeeConnectionObjects() {
+        $(ILocators.CONNECTION_OBJECTS_TITLE).waitUntilVisible();
+        $(ILocators.WIDGET_OVERLAY_LOADING).waitUntilPresent();
+        return $(ILocators.CONNECTION_OBJECTS_TITLE).isVisible();
+    }
+
+    public void userEntersTableNameIsSearchField(String arg0) {
+       // $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).clear();
+        $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).sendKeys(arg0);
+        waitABit(2000);
+    }
+
+    public boolean userShouldSeeOrdersTableInFilterResults() {
+        waitABit(2000);
+        return $(ILocators.TABLE_NAME_IN_FILTER_RESULTS).isVisible();
+    }
 }

@@ -39,13 +39,26 @@ public class DataAcquisitionPage extends PageObject{
     }
 
     public void userEntersTableNameIsSearchField(String arg0) {
-       // $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).clear();
+
+
+        $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).click();
         $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).sendKeys(arg0);
-        waitABit(2000);
+        //waitABit(2000);
     }
 
     public boolean userShouldSeeOrdersTableInFilterResults() {
-        waitABit(2000);
-        return $(ILocators.TABLE_NAME_IN_FILTER_RESULTS).isVisible();
+        return $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS).isVisible();
+    }
+
+    public void userSelectsTableInFilterResults() {
+        $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS).click();
+    }
+
+    public boolean userShouldSeeThatTheTableIsSelected() {
+        return $(ILocators.SELECTED_TABLE_IN_SEARCH_RESULT).isVisible();
+    }
+
+    public void userSelectsAllColumns() {
+        $(ILocators.SELECT_ALL_COLUMNS_BUTTON).click();
     }
 }

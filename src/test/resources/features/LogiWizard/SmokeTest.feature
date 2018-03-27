@@ -60,9 +60,13 @@ Feature: Setup data in DH3 admin
     When user clicks on Connection name
     Then user should see Connection Objects
 
-    When user enters table name "Orders" is Search field
+    When user enters table name "dbo.Orders" is Search field
     Then user should see Orders table in filter results
 
+    When user selects table in filter results
+    Then user should see that the table is selected
+
+    When user selects all columns
 
 
 

@@ -34,11 +34,16 @@ public interface ILocators {
     String CREATE_DATAVIEW_FROM_SOURCE_BUTTON="//span[contains(text(),'From Source')]";
     String CONNECTION_OBJECTS_TITLE="//span[contains(text(),'Objects in QASQL2K8')]";
     String WIDGET_OVERLAY_LOADING="//div[@class=\"ui-widget-overlay loading\"][@style=\"display: none;\"]";
-    String SEARCH_TABLE_BY_NAME_FIELD="//input[@placeholder='Search by Name']";
-    String TABLE_NAME_IN_FILTER_RESULTS="//span[@title=\"dbo.Orders\"]";
+    //String SEARCH_TABLE_BY_NAME_FIELD="//input[@placeholder='Search by Name']";
+    String SEARCH_TABLE_BY_NAME_FIELD="//input[@data-bind=\"value: dataSourceTableFilterString, valueUpdate: 'keyup', attr: {placeholder: i18n('searchByName')}\"]";
+    //String FIRST_TABLE_NAME_IN_SEARCH_RESULTS="//ul[@id='dataSourceTablesList']/li[1]   ";
+
+    String FIRST_TABLE_NAME_IN_SEARCH_RESULTS="//li[@class='data-source-table-section-label']/following-sibling::li[1]//span[@title='dbo.Orders']";
+    String SELECTED_TABLE_IN_SEARCH_RESULT="//li[@class='data-source-table-section-label']/following-sibling::li[1]/div[@class=\"data-source-table-pill selected\"]";
+    String SELECT_ALL_COLUMNS_BUTTON="//a[@data-bind='click: function () { onSelectOrDeselectAllColumns(true); }'][contains(text(),'All')]";
 
 
-
+    //a[@data-bind='click: function () { onSelectOrDeselectAllColumns(true); }']
 
 
 

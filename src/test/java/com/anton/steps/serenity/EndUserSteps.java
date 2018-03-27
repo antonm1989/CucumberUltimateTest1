@@ -222,6 +222,18 @@ public class EndUserSteps {
     }
     @Step
     public void userShouldSeeOrdersTableInFilterResults() {
-        Assert.assertTrue("dbo.Orders table is not present in resultset",dataAcquisitionPage.userShouldSeeOrdersTableInFilterResults());
+        Assert.assertTrue("dbo.Orders table is not present as first result",dataAcquisitionPage.userShouldSeeOrdersTableInFilterResults());
+    }
+    @Step
+    public void userSelectsTableInFilterResults() {
+        dataAcquisitionPage.userSelectsTableInFilterResults();
+    }
+    @Step
+    public void userShouldSeeThatTheTableIsSelected() {
+        Assert.assertTrue("Table is not selected in serach results",dataAcquisitionPage.userShouldSeeThatTheTableIsSelected());
+    }
+    @Step
+    public void userSelectsAllColumns() {
+        dataAcquisitionPage.userSelectsAllColumns();
     }
 }

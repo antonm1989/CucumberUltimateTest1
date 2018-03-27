@@ -279,4 +279,19 @@ public class DefinitionSteps {
         steps.userShouldSeeOrdersTableInFilterResults();
 
     }
+
+    @When("^user selects table in filter results$")
+    public void userSelectsTableInFilterResults() throws Throwable {
+        steps.userSelectsTableInFilterResults();
+    }
+
+    @Then("^user should see that the table is selected$")
+    public void userShouldSeeThatTheTableIsSelected() throws Throwable {
+        steps.userShouldSeeThatTheTableIsSelected();
+    }
+
+    @When("^user selects all columns$")
+    public void userSelectsAllColumns() throws Throwable {
+        steps.userSelectsAllColumns();
+    }
 }

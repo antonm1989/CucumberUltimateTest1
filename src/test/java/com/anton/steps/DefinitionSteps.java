@@ -175,10 +175,10 @@ public class DefinitionSteps {
         steps.userClicksOnSaveButton();
     }
 
-    @Then("^user should see created connection$")
-    public void userShouldSeeCreatedConnection() throws Throwable {
-        steps.userShouldSeeCreatedConnection();
-    }
+//    @Then("^user should see created connection$")
+//    public void userShouldSeeCreatedConnection() throws Throwable {
+//        steps.userShouldSeeCreatedConnection();
+//    }
 
     @When("^user hovers mouse over Dataviews menu$")
     public void userHoversMouseOverDataviewsMenu() throws Throwable {
@@ -293,5 +293,10 @@ public class DefinitionSteps {
     @When("^user selects all columns$")
     public void userSelectsAllColumns() throws Throwable {
         steps.userSelectsAllColumns();
+    }
+
+    @Then("^user should see created connection \"([^\"]*)\"$")
+    public void userShouldSeeCreatedConnection(String arg0) throws Throwable {
+        steps.userShouldSeeCreatedConnection(arg0);
     }
 }

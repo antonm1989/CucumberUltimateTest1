@@ -24,7 +24,7 @@ public interface ILocators {
     String NEW_CONNECTION_TEST_SOURCE_BUTTON="//button/span[contains(text(),'Test Source')]";
     String NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE="//div[@class='alert success-message']";
     String NEW_CONNECTION_SAVE_BUTTON="//button/span[contains(text(),'Save')]";
-    String CREATED_CONNECTION_TITLE="//h3[contains(text(),'QASQL2K8')]";
+    String CREATED_CONNECTION_TITLE="//h3[contains(text(),'$1')]')]";
     String DATAVIEWS_MAIN_MENU="//span[contains(text(),'Dataviews')]";
     String CONNECTION_SETTINGS_COG="//div[@class='cardbox connections']/div/ul/li";
     String CONNECTION_SETTINGS_DELETE_OPTION="//span[contains(text(),'Delete')]";

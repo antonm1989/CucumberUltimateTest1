@@ -92,6 +92,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeDatabaseNameSelector() {
+        waitABit(5000);
         return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isVisible();
     }
 
@@ -122,6 +123,7 @@ public class ConnectionsPage extends PageObject {
     public void userClickTestSourceButton() {
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).click();
+        waitABit(5000);
     }
 
     public boolean userShouldSeeSuccessfulTestConfirmationMessage() {
@@ -132,13 +134,13 @@ public class ConnectionsPage extends PageObject {
     public void userClicksOnSaveButton() {
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).click();
+        waitABit(9000);
     }
 
-    public boolean userShouldSeeCreatedConnection() {
-        $(ILocators.CREATED_CONNECTION_TITLE).waitUntilVisible();
-        return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
-
+    public boolean userShouldSeeCreatedConnection(String arg0) {
+        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).isVisible();
     }
+    
 
     public void userHoversMouseOverDataviewsMenu() {
         $(ILocators.DATAVIEWS_MAIN_MENU).waitUntilClickable();
@@ -197,6 +199,8 @@ public class ConnectionsPage extends PageObject {
     public void userClicksCreateANewDataviewOption() {
         $(ILocators.CREATE_A_NEW_DATAVIEW_OPTION).click();
     }
+
+
 }
 
 

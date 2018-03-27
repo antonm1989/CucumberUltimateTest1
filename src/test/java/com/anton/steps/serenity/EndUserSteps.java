@@ -142,10 +142,10 @@ public class EndUserSteps {
     public void userClicksOnSaveButton() {
         connectionsPage.userClicksOnSaveButton();
     }
-    @Step
-    public void userShouldSeeCreatedConnection() {
-        Assert.assertTrue("Created connection is not present",connectionsPage.userShouldSeeCreatedConnection());
-    }
+//    @Step
+//    public void userShouldSeeCreatedConnection() {
+//        Assert.assertTrue("Created connection is not present",connectionsPage.userShouldSeeCreatedConnection());
+//    }
     @Step
     public void userHoversMouseOverDataviewsMenu() {
         connectionsPage.userHoversMouseOverDataviewsMenu();
@@ -235,5 +235,9 @@ public class EndUserSteps {
     @Step
     public void userSelectsAllColumns() {
         dataAcquisitionPage.userSelectsAllColumns();
+    }
+    @Step
+    public void userShouldSeeCreatedConnection(String arg0) {
+        Assert.assertTrue("Created connection " + arg0 + " is not present",connectionsPage.userShouldSeeCreatedConnection(arg0));
     }
 }

@@ -13,39 +13,40 @@ Feature: Setup data in DH3 admin
     Then user should see home logo
     And user should see Sources button
 
-  #  When user clicks on Sources button
-   # Then user should see Connections page "http://localhost:3000/datahub/Connections"
-    #And user should see Create New Source button
+   When user clicks on Sources button
+    Then user should see Connections page "http://localhost:3000/datahub/Connections"
+    And user should see Create New Source button
 
-    #When user clicks Create New Source button
-    #Then user should see Add Source window
-    #And user should see Select Data Provider dropdown
+    When user clicks Create New Source button
+    Then user should see Add Source window
+    And user should see Select Data Provider dropdown
 
-    #When user clicks on Select Data Provider dropdown
-   # Then user should see SQL Server option
+    When user clicks on Select Data Provider dropdown
+   Then user should see SQL Server option
 
-    #When user clicks on SQL Server option
-    #Then user should see SQL Server option selected
-    #And user should see Connection Name field
+    When user clicks on SQL Server option
+    Then user should see SQL Server option selected
+    And user should see Connection Name field
 
-   # When user enters Connection Name as "QASQL2K8"
-    #And user enters Server Name as "QASQL2K8"
-    #And user enters User Name as "sa"
-    #And user enters Password as "LGXpass"
-    #And user click Get Databases button
-    #Then user should see Database Name selector
+    When user enters Connection Name as "QASQL2K8"
+    And user enters Server Name as "QASQL2K8"
+    And user enters User Name as "sa"
+    And user enters Password as "LGXpass"
+    And user click Get Databases button
+    Then user should see Database Name selector
 
-    #When user clicks on Database Name selector
-    #Then user should see NGP option
+    When user clicks on Database Name selector
+    Then user should see NGP option
 
-    #When user selects NGP option
-    #Then user should see that NGP option is selected
+    When user selects NGP option
+    Then user should see that NGP option is selected
 
-    #When user clicks Test Source button
-    #Then user should see Successful Test Confirmation message
+    When user clicks Test Source button
+    Then user should see Successful Test Confirmation message
 
-    #When user clicks on Save button
-    #Then user should see created connection
+    When user clicks on Save button
+    Then user should see created connection "QASKL2K8"
+
 
     When user hovers mouse over Dataviews menu
     Then user should see Create A New Dataview option

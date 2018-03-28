@@ -32,7 +32,7 @@ public class DefinitionSteps {
 
     @Then("^user perform login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void userPerformLoginWithAnd(String arg0, String arg1) throws Throwable {
-       steps.userPerformLoginWithAnd(arg0, arg1);
+        steps.userPerformLoginWithAnd(arg0, arg1);
     }
 
     @Then("^user should see home logo$")
@@ -42,7 +42,7 @@ public class DefinitionSteps {
 
     @When("^user clicks on Sources button$")
     public void userClicksOnSourcesButton() throws Throwable {
-       steps.userClicksOnSourcesButton();
+        steps.userClicksOnSourcesButton();
 
     }
 
@@ -60,12 +60,12 @@ public class DefinitionSteps {
 
     @Then("^user should see Create New Source button$")
     public void userShouldSeeCreateNewSourceButton() throws Throwable {
-      steps.userShouldSeeCreateNewSourceButton();
+        steps.userShouldSeeCreateNewSourceButton();
     }
 
     @When("^user clicks Create New Source button$")
     public void userClicksCreateNewSourceButton() throws Throwable {
-       steps.userClicksCreateNewSourceButton();
+        steps.userClicksCreateNewSourceButton();
     }
 
     @Then("^user should see Add Source window$")
@@ -83,14 +83,16 @@ public class DefinitionSteps {
         steps.userClicksOnSelectDataProviderDropdown();
     }
 
-    @Then("^user should see SQL Server option$")
-    public void userShouldSeeSQLServerOption() throws Throwable {
-        steps.userShouldSeeSQLServerOption();
+
+    @Then("^user should see \"([^\"]*)\" option$")
+    public void userShouldSeeOption(String arg0) throws Throwable {
+        steps.userShouldSeeOption(arg0);
     }
 
-    @When("^user clicks on SQL Server option$")
-    public void userClicksOnSQLServerOption() throws Throwable {
-        steps.userClicksOnSQLServerOption();
+
+    @When("^user clicks on \"([^\"]*)\" option$")
+    public void userClicksOnOption(String arg0) throws Throwable {
+        steps.userClicksOnOption(arg0);
     }
 
     @Then("^user should see SQL Server option selected$")
@@ -127,7 +129,7 @@ public class DefinitionSteps {
 
     @When("^user click Get Databases button$")
     public void userClickGetDatabasesButton() throws Throwable {
-       steps.userClickGetDatabasesButton();
+        steps.userClickGetDatabasesButton();
     }
 
     @Then("^user should see Database Name selector$")
@@ -137,7 +139,7 @@ public class DefinitionSteps {
 
     @When("^user clicks on Database Name selector$")
     public void userClicksOnDatabaseNameSelector() throws Throwable {
-       steps.userClicksOnDatabaseNameSelector();
+        steps.userClicksOnDatabaseNameSelector();
     }
 
     @Then("^user should see NGP option$")
@@ -147,7 +149,7 @@ public class DefinitionSteps {
 
     @When("^user selects NGP option$")
     public void userSelectsNGPOption() throws Throwable {
-      steps.userSelectsNGPOption();
+        steps.userSelectsNGPOption();
     }
 
     @Then("^user should see that NGP option is selected$")
@@ -175,10 +177,11 @@ public class DefinitionSteps {
         steps.userClicksOnSaveButton();
     }
 
-//    @Then("^user should see created connection$")
-//    public void userShouldSeeCreatedConnection() throws Throwable {
-//        steps.userShouldSeeCreatedConnection();
-//    }
+
+    @Then("^user should see created connection \"([^\"]*)\"$")
+    public void userShouldSeeCreatedConnection(String arg0) throws Throwable {
+        steps.userShouldSeeCreatedConnection(arg0);
+    }
 
     @When("^user hovers mouse over Dataviews menu$")
     public void userHoversMouseOverDataviewsMenu() throws Throwable {
@@ -254,15 +257,15 @@ public class DefinitionSteps {
         steps.userClickCreateFromSourceButton();
     }
 
-    @Then("^user should see Connection name$")
-    public void userShouldSeeConnectionName() throws Throwable {
-        steps.userShouldSeeConnectionName();
+    @Then("^user should see Connection name \"([^\"]*)\"$")
+    public void userShouldSeeConnectionName(String arg0) throws Throwable {
+        steps.userShouldSeeConnectionName(arg0);
     }
 
-    @When("^user clicks on Connection name$")
-    public void userClicksOnConnectionName() throws Throwable {
-        steps.userClicksOnConnectionName();
-    }
+//    @When("^user clicks on Connection name$")
+//    public void userClicksOnConnectionName() throws Throwable {
+//        steps.userClicksOnConnectionName();
+//    }
 
     @Then("^user should see Connection Objects$")
     public void userShouldSeeConnectionObjects() throws Throwable {
@@ -271,7 +274,7 @@ public class DefinitionSteps {
 
     @When("^user enters table name \"([^\"]*)\" is Search field$")
     public void userEntersTableNameIsSearchField(String arg0) throws Throwable {
-       steps.userEntersTableNameIsSearchField(arg0);
+        steps.userEntersTableNameIsSearchField(arg0);
     }
 
     @Then("^user should see Orders table in filter results$")
@@ -295,8 +298,9 @@ public class DefinitionSteps {
         steps.userSelectsAllColumns();
     }
 
-    @Then("^user should see created connection \"([^\"]*)\"$")
-    public void userShouldSeeCreatedConnection(String arg0) throws Throwable {
-        steps.userShouldSeeCreatedConnection(arg0);
+
+    @When("^user clicks on Connection name \"([^\"]*)\"$")
+    public void userClicksOnConnectionName(String arg0) throws Throwable {
+        steps.userClicksOnConnectionName(arg0);
     }
 }

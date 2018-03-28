@@ -13,7 +13,7 @@ Feature: Setup data in DH3 admin
     Then user should see home logo
     And user should see Sources button
 
-   When user clicks on Sources button
+    When user clicks on Sources button
     Then user should see Connections page "http://localhost:3000/datahub/Connections"
     And user should see Create New Source button
 
@@ -22,9 +22,10 @@ Feature: Setup data in DH3 admin
     And user should see Select Data Provider dropdown
 
     When user clicks on Select Data Provider dropdown
-   Then user should see SQL Server option
+    Then user should see "SQLServer" option
 
-    When user clicks on SQL Server option
+
+    When user clicks on "Microsoft SQL Server" option
     Then user should see SQL Server option selected
     And user should see Connection Name field
 
@@ -45,7 +46,7 @@ Feature: Setup data in DH3 admin
     Then user should see Successful Test Confirmation message
 
     When user clicks on Save button
-    Then user should see created connection "QASKL2K8"
+    Then user should see created connection "QASQL2K8"
 
 
     When user hovers mouse over Dataviews menu
@@ -56,9 +57,9 @@ Feature: Setup data in DH3 admin
     And user should see Create From Source button
 
     When user click Create From Source button
-    Then user should see Connection name
+    Then user should see Connection name "QASQL2K8"
 
-    When user clicks on Connection name
+    When user clicks on Connection name "QASQL2K8"
     Then user should see Connection Objects
 
     When user enters table name "dbo.Orders" is Search field

@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DataAcquisitionPage extends PageObject{
+public class DataAcquisitionPage extends PageObject {
 
     public boolean userShouldSeeCreateFromSourceButton() {
         $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).waitUntilVisible();
@@ -23,14 +23,14 @@ public class DataAcquisitionPage extends PageObject{
         $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).click();
     }
 
-    public boolean userShouldSeeConnectionName() {
-        $(ILocators.CREATED_CONNECTION_TITLE).waitUntilVisible();
-        return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
+    public boolean userShouldSeeConnectionName(String arg0) {
+        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).waitUntilVisible();
+        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).isVisible();
     }
 
-    public void userClicksOnConnectionName() {
-        $(ILocators.CREATED_CONNECTION_TITLE).click();
-    }
+//    public void userClicksOnConnectionName() {
+//        $(ILocators.CREATED_CONNECTION_TITLE).click();
+//    }
 
     public boolean userShouldSeeConnectionObjects() {
         $(ILocators.CONNECTION_OBJECTS_TITLE).waitUntilVisible();
@@ -43,7 +43,7 @@ public class DataAcquisitionPage extends PageObject{
 
         $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).click();
         $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).sendKeys(arg0);
-        //waitABit(2000);
+
     }
 
     public boolean userShouldSeeOrdersTableInFilterResults() {
@@ -60,5 +60,9 @@ public class DataAcquisitionPage extends PageObject{
 
     public void userSelectsAllColumns() {
         $(ILocators.SELECT_ALL_COLUMNS_BUTTON).click();
+    }
+
+    public void userClicksOnConnectionName(String arg0) {
+        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).click();
     }
 }

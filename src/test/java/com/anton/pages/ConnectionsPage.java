@@ -1,21 +1,48 @@
 package com.anton.pages;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import com.anton.ILocators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 
 public class ConnectionsPage extends PageObject {
 
+    //    public void waitForInvisibilityOfElement(WebElementFacade element, int num, int mseconds){
+//        int counter = 0;
+//        while ((element.isVisible()) && (counter <= num) ){
+//            waitABit(mseconds);
+//            counter++;
+//        }
+//    }
+//
+//    public void waitForVisibilityOfElement(WebElementFacade element, int num, int mseconds){
+//        int counter = 0;
+//        while ((!(element.isVisible())) && (counter <= num) ){
+//            waitABit(mseconds);
+//            counter++;
+//        }
+//    }
+    public void waitForLoader() {
+        try {
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            waitABit(300);
+        } catch (Exception e) {
+            System.out.println("Wait for loader crashed.\n");
+        }
+    }
 
     public boolean userShouldSeeSourcesButton() {
+
+
         return $(ILocators.SOURCES_BUTTON).isVisible();
     }
 
@@ -30,11 +57,13 @@ public class ConnectionsPage extends PageObject {
     }
 
     public void userClicksCreateNewSourceButton() {
-        $(ILocators.CREATE_NEW_SOURCE_BUTTON).waitUntilClickable();
+       // $(ILocators.CREATE_NEW_SOURCE_BUTTON).waitUntilClickable();
         $(ILocators.CREATE_NEW_SOURCE_BUTTON).click();
     }
 
     public boolean userShouldSeeAddSourceWindow() {
+
+
         return $(ILocators.ADD_SOURCE_WINDOW).isVisible();
     }
 
@@ -46,12 +75,20 @@ public class ConnectionsPage extends PageObject {
         $(ILocators.DATA_PROVIDER_DROPDOWN).click();
     }
 
-    public boolean userShouldSeeSQLServerOption() {
-        return $(ILocators.SQL_SERVER_OPTION).isVisible();
+    public boolean userShouldSeeOption(String arg0) {
+        //waitForLoader();
+        return $(ILocators.DATA_PROVIDER_OPTION).isVisible();
     }
 
-    public void userClicksOnSQLServerOption() {
-        $(ILocators.SQL_SERVER_OPTION).click();
+    public void userClicksOnOption(String arg0) {
+        List<WebElementFacade> dataProviderOptions = findAll(ILocators.DATA_PROVIDER_OPTIONS);
+        for (WebElementFacade elementFacade : dataProviderOptions) {
+            if (elementFacade.getText().equalsIgnoreCase(arg0)) {
+                elementFacade.click();
+                return;
+            }
+        }
+        throw new NoSuchElementException("Option " + arg0 + " is not found");
     }
 
 
@@ -92,7 +129,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeDatabaseNameSelector() {
-        waitABit(5000);
+        waitForLoader();
         return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isVisible();
     }
 
@@ -123,10 +160,11 @@ public class ConnectionsPage extends PageObject {
     public void userClickTestSourceButton() {
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).click();
-        waitABit(5000);
+
     }
 
     public boolean userShouldSeeSuccessfulTestConfirmationMessage() {
+        waitForLoader();
         $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).waitUntilVisible();
         return $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).isVisible();
     }
@@ -134,18 +172,19 @@ public class ConnectionsPage extends PageObject {
     public void userClicksOnSaveButton() {
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).click();
-        waitABit(9000);
+
     }
 
     public boolean userShouldSeeCreatedConnection(String arg0) {
-        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).isVisible();
+        waitForLoader();
+        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).isVisible();
     }
-    
+
 
     public void userHoversMouseOverDataviewsMenu() {
         $(ILocators.DATAVIEWS_MAIN_MENU).waitUntilClickable();
 
-        WebElement dataviews_Main_Menu=$(ILocators.DATAVIEWS_MAIN_MENU).findBy(By.xpath(ILocators.DATAVIEWS_MAIN_MENU));
+        WebElement dataviews_Main_Menu = $(ILocators.DATAVIEWS_MAIN_MENU).findBy(By.xpath(ILocators.DATAVIEWS_MAIN_MENU));
         Actions builder = new Actions(getDriver());
         builder.moveToElement(dataviews_Main_Menu).build().perform();
     }
@@ -155,8 +194,8 @@ public class ConnectionsPage extends PageObject {
     }
 
     public void userHoversMouseOverConnectionSettingsCog() {
-        WebElement connection_Settings_Cog=$(ILocators.CONNECTION_SETTINGS_COG).find(By.xpath(ILocators.CONNECTION_SETTINGS_COG));
-        Actions builder=new Actions(getDriver());
+        WebElement connection_Settings_Cog = $(ILocators.CONNECTION_SETTINGS_COG).find(By.xpath(ILocators.CONNECTION_SETTINGS_COG));
+        Actions builder = new Actions(getDriver());
         builder.moveToElement(connection_Settings_Cog).build().perform();
     }
 

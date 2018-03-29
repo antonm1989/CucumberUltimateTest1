@@ -42,7 +42,7 @@ public interface ILocators {
 
     String WIDGET_OVERLAY_LOADING = "//div[@class='ui-widget-overlay loading']";
 
-    String SEARCH_TABLE_BY_NAME_FIELD = "//input[@data-bind=\"value: dataSourceTableFilterString, valueUpdate: 'keyup', attr: {placeholder: i18n('searchByName')}\"]";
+    String SEARCH_TABLE_BY_NAME_FIELD = "(//input[@class='string-filter-input'])[1]";
 
     String FIRST_TABLE_NAME_IN_SEARCH_RESULTS = "//li[@class='data-source-table-section-label']/following-sibling::li[1]//span[@title='$1']";
     String SELECTED_TABLE_IN_SEARCH_RESULT = "//li[@class='data-source-table-section-label']/following-sibling::li[1]/div[@class=\"data-source-table-pill selected\"]";

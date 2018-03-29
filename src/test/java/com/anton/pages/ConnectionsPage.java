@@ -17,8 +17,8 @@ public class ConnectionsPage extends PageObject {
 
     public void waitForLoader(String methodName) {
         try {
-            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
-            withTimeoutOf(10, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            //withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
             waitABit(300);
         } catch (Exception e) {
             System.out.println(methodName + " - Wait for loader failed\n");
@@ -106,7 +106,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeDatabaseNameSelector() {
-
+        waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR)));
         return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isVisible();
     }
 

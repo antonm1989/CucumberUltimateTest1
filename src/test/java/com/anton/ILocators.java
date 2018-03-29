@@ -6,16 +6,17 @@ public interface ILocators {
     String LOGIN_BUTTON = "//button[@class='button brand-btn']";
     String USERNAME_FIELD = "//input[@id='UserName']";
     String PASSWORD_FIELD = "//input[@id='Password']";
+
     String HOME_LOGO = "//span[@class='logi-font icon-datahub']";
+
     String SOURCES_BUTTON = "//span[@data-bind=\"text:i18n('sources.label')\"]";
     String CREATE_NEW_SOURCE_BUTTON = "//span[@data-bind=\"text: i18nTitle('connections.home.createNewConnectionLabel')\"]";
     String ADD_SOURCE_WINDOW = "//span[contains(text(),'Add Source')]";
-    String DATA_PROVIDER_DROPDOWN = "//select[@id='selectDataProvider']";
-    String DATA_PROVIDER_OPTION = "//option[@value='SQLServer']";
 
+    String DATA_PROVIDER_DROPDOWN = "//select[@id='selectDataProvider']";
+    String DATA_PROVIDER_OPTION = "//option[@value='$1']";
     String DATA_PROVIDER_OPTIONS = "//select[@id='selectDataProvider']/option";
 
-    String SQL_SERVER_SELECTED_OPTION = ".//*[@id='selectDataProvider']/option[@value='SQLServer']";
     String NEW_CONNECTION_SOURCE_NAME_FIELD = "//input[contains(@data-bind,'ConnectionName')]";
     String NEW_CONNECTION_SERVER_NAME_FIELD = "//input[contains(@data-bind,'server')]";
     String NEW_CONNETION_USER_NAME_FIELD = "//input[contains(@data-bind,'user')]";
@@ -38,17 +39,15 @@ public interface ILocators {
     String CREATE_A_NEW_DATAVIEW_OPTION = "//b[contains(text(),'Create a New Dataview')]";
     String CREATE_DATAVIEW_FROM_SOURCE_BUTTON = "//span[contains(text(),'From Source')]";
     String CONNECTION_OBJECTS_TITLE = "//span[contains(text(),'Objects in QASQL2K8')]";
-    String WIDGET_OVERLAY_LOADING = "//div[@class=\"ui-widget-overlay loading\"][@style=\"display: none;\"]";
-    //String SEARCH_TABLE_BY_NAME_FIELD="//input[@placeholder='Search by Name']";
-    String SEARCH_TABLE_BY_NAME_FIELD = "//input[@data-bind=\"value: dataSourceTableFilterString, valueUpdate: 'keyup', attr: {placeholder: i18n('searchByName')}\"]";
-    //String FIRST_TABLE_NAME_IN_SEARCH_RESULTS="//ul[@id='dataSourceTablesList']/li[1]   ";
 
-    String FIRST_TABLE_NAME_IN_SEARCH_RESULTS = "//li[@class='data-source-table-section-label']/following-sibling::li[1]//span[@title='dbo.Orders']";
+    String WIDGET_OVERLAY_LOADING = "//div[@class='ui-widget-overlay loading']";
+
+    String SEARCH_TABLE_BY_NAME_FIELD = "//input[@data-bind=\"value: dataSourceTableFilterString, valueUpdate: 'keyup', attr: {placeholder: i18n('searchByName')}\"]";
+
+    String FIRST_TABLE_NAME_IN_SEARCH_RESULTS = "//li[@class='data-source-table-section-label']/following-sibling::li[1]//span[@title='$1']";
     String SELECTED_TABLE_IN_SEARCH_RESULT = "//li[@class='data-source-table-section-label']/following-sibling::li[1]/div[@class=\"data-source-table-pill selected\"]";
     String SELECT_ALL_COLUMNS_BUTTON = "//a[@data-bind='click: function () { onSelectOrDeselectAllColumns(true); }'][contains(text(),'All')]";
 
-
-    //a[@data-bind='click: function () { onSelectOrDeselectAllColumns(true); }']
-
+    String FIRST_SELECTED_COLUMN="//ul[@id='dataSourceTableColumnsList']//div[@class='data-source-table-column-pill layout-flex used']";
 
 }

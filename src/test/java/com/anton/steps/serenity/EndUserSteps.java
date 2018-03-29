@@ -24,7 +24,7 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeTheLoginPage(String arg0) {
-        Assert.assertEquals("this is not the login page", loginPage.getDriver().getCurrentUrl(), arg0);
+        Assert.assertEquals("This is not the login page", loginPage.getDriver().getCurrentUrl(), arg0);
     }
 
     @Step
@@ -86,7 +86,7 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeOption(String arg0) {
-        Assert.assertTrue(arg0 + " Option is not present", connectionsPage.userShouldSeeOption(arg0));
+        Assert.assertTrue(arg0 + " data provider option is not present", connectionsPage.userShouldSeeOption(arg0));
     }
 
     @Step
@@ -94,10 +94,6 @@ public class EndUserSteps {
         connectionsPage.userClicksOnOption(arg0);
     }
 
-    @Step
-    public void userShouldSeeSQLServerOptionSelected() {
-        Assert.assertTrue("SQL Server option is not selected", connectionsPage.userShouldSeeSQLServerOptionSelected());
-    }
 
     @Step
     public void userShouldSeeConnectionNameField() {
@@ -175,10 +171,6 @@ public class EndUserSteps {
         connectionsPage.userClicksOnSaveButton();
     }
 
-    //    @Step
-//    public void userShouldSeeCreatedConnection() {
-//        Assert.assertTrue("Created connection is not present",connectionsPage.userShouldSeeCreatedConnection());
-//    }
 
     @Step
     public void userShouldSeeCreatedConnection(String arg0) {
@@ -202,7 +194,7 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeDeleteMenuOption() {
-        Assert.assertTrue("Delete option is not present", connectionsPage.userShouldSeeDeleteMenuOption());
+        Assert.assertTrue("Delete Connection option is not present", connectionsPage.userShouldSeeDeleteMenuOption());
     }
 
     @Step
@@ -212,12 +204,12 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeConfirmDeleteDialog() {
-        Assert.assertTrue("Confirm Delete dialog is not present", connectionsPage.userShouldSeeConfirmDeleteDialog());
+        Assert.assertTrue("Confirm Delete Connection dialog is not present", connectionsPage.userShouldSeeConfirmDeleteDialog());
     }
 
     @Step
     public void userShouldSeeDeleteButton() {
-        Assert.assertTrue("Delete button is not present", connectionsPage.userShouldSeeDeleteButton());
+        Assert.assertTrue("Delete Connection button is not present", connectionsPage.userShouldSeeDeleteButton());
     }
 
     @Step
@@ -248,7 +240,7 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeCreateFromSourceButton() {
-        Assert.assertTrue("Create From Source button is not present", dataAcquisitionPage.userShouldSeeCreateFromSourceButton());
+        Assert.assertTrue("Create Dataview From Source button is not present", dataAcquisitionPage.userShouldSeeCreateFromSourceButton());
     }
 
     @Step
@@ -258,13 +250,9 @@ public class EndUserSteps {
 
     @Step
     public void userShouldSeeConnectionName(String arg0) {
-        Assert.assertTrue("Connection name is not present", dataAcquisitionPage.userShouldSeeConnectionName(arg0));
+        Assert.assertTrue("Connection name is not present in Create From Source flow", dataAcquisitionPage.userShouldSeeConnectionName(arg0));
     }
 
-//    @Step
-//    public void userClicksOnConnectionName() {
-//        dataAcquisitionPage.userClicksOnConnectionName();
-//    }
 
     @Step
     public void userShouldSeeConnectionObjects() {
@@ -276,20 +264,12 @@ public class EndUserSteps {
         dataAcquisitionPage.userEntersTableNameIsSearchField(arg0);
     }
 
-    @Step
-    public void userShouldSeeOrdersTableInFilterResults() {
-        Assert.assertTrue("dbo.Orders table is not present as first result", dataAcquisitionPage.userShouldSeeOrdersTableInFilterResults());
-    }
 
     @Step
-    public void userSelectsTableInFilterResults() {
-        dataAcquisitionPage.userSelectsTableInFilterResults();
+    public void userSelectsTableInFilterResults(String arg0) {
+        dataAcquisitionPage.userSelectsTableInFilterResults(arg0);
     }
 
-    @Step
-    public void userShouldSeeThatTheTableIsSelected() {
-        Assert.assertTrue("Table is not selected in serach results", dataAcquisitionPage.userShouldSeeThatTheTableIsSelected());
-    }
 
     @Step
     public void userSelectsAllColumns() {
@@ -299,5 +279,18 @@ public class EndUserSteps {
     @Step
     public void userClicksOnConnectionName(String arg0) {
         dataAcquisitionPage.userClicksOnConnectionName(arg0);
+    }
+
+    @Step
+    public void userShouldSeeTableInFilterResults(String arg0) {
+        Assert.assertTrue("Table " + arg0 + " is not shown as 1st search result", dataAcquisitionPage.userShouldSeeTableInFilterResults(arg0));
+    }
+
+    public void userShouldSeeThatTableIsSelected(String arg0) {
+        Assert.assertTrue("Table " + arg0 + " is not selected in search results", dataAcquisitionPage.userShouldSeeThatTableIsSelected());
+    }
+
+    public void userShouldSeeThatAllColumnsAreSelected() {
+        Assert.assertTrue("Columns are not selected", dataAcquisitionPage.userShouldSeeThatAllColumnsAreSelected());
     }
 }

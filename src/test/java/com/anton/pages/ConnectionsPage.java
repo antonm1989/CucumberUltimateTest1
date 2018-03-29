@@ -15,41 +15,25 @@ import java.util.concurrent.TimeUnit;
 
 public class ConnectionsPage extends PageObject {
 
-    //    public void waitForInvisibilityOfElement(WebElementFacade element, int num, int mseconds){
-//        int counter = 0;
-//        while ((element.isVisible()) && (counter <= num) ){
-//            waitABit(mseconds);
-//            counter++;
-//        }
-//    }
-//
-//    public void waitForVisibilityOfElement(WebElementFacade element, int num, int mseconds){
-//        int counter = 0;
-//        while ((!(element.isVisible())) && (counter <= num) ){
-//            waitABit(mseconds);
-//            counter++;
-//        }
-//    }
-    public void waitForLoader() {
+    public void waitForLoader(String methodName) {
         try {
             withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
-            withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            withTimeoutOf(10, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
             waitABit(300);
         } catch (Exception e) {
-            System.out.println("Wait for loader crashed.\n");
+            System.out.println(methodName + " - Wait for loader failed\n");
         }
     }
 
     public boolean userShouldSeeSourcesButton() {
-
-
+        waitForLoader("userShouldSeeSourcesButton");
         return $(ILocators.SOURCES_BUTTON).isVisible();
     }
 
     public void userClicksOnSourcesButton() {
 
-        $(ILocators.SOURCES_BUTTON).waitUntilClickable();
         $(ILocators.SOURCES_BUTTON).click();
+        waitForLoader("userClicksOnSourcesButton");
     }
 
     public boolean userShouldSeeCreateNewSourceButton() {
@@ -57,12 +41,10 @@ public class ConnectionsPage extends PageObject {
     }
 
     public void userClicksCreateNewSourceButton() {
-       // $(ILocators.CREATE_NEW_SOURCE_BUTTON).waitUntilClickable();
         $(ILocators.CREATE_NEW_SOURCE_BUTTON).click();
     }
 
     public boolean userShouldSeeAddSourceWindow() {
-
 
         return $(ILocators.ADD_SOURCE_WINDOW).isVisible();
     }
@@ -76,8 +58,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeOption(String arg0) {
-        //waitForLoader();
-        return $(ILocators.DATA_PROVIDER_OPTION).isVisible();
+        return $(ILocators.DATA_PROVIDER_OPTION.replace("$1", arg0)).isVisible();
     }
 
     public void userClicksOnOption(String arg0) {
@@ -89,11 +70,6 @@ public class ConnectionsPage extends PageObject {
             }
         }
         throw new NoSuchElementException("Option " + arg0 + " is not found");
-    }
-
-
-    public boolean userShouldSeeSQLServerOptionSelected() {
-        return $(ILocators.SQL_SERVER_SELECTED_OPTION).isVisible();
     }
 
     public boolean userShouldSeeConnectionNameField() {
@@ -126,16 +102,16 @@ public class ConnectionsPage extends PageObject {
 
     public void userClickGetDatabasesButton() {
         $(ILocators.NEW_CONNECTION_GET_DATABASES_BUTTON).click();
+        waitForLoader("userClickGetDatabasesButton");
     }
 
     public boolean userShouldSeeDatabaseNameSelector() {
-        waitForLoader();
+
         return $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).isVisible();
     }
 
     public void userClicksOnDatabaseNameSelector() {
         $(ILocators.NEW_CONNECTION_DATABASE_NAME_SELECTOR).click();
-
 
     }
 
@@ -160,11 +136,12 @@ public class ConnectionsPage extends PageObject {
     public void userClickTestSourceButton() {
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_TEST_SOURCE_BUTTON).click();
+        waitForLoader("userClickTestSourceButton");
 
     }
 
     public boolean userShouldSeeSuccessfulTestConfirmationMessage() {
-        waitForLoader();
+
         $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).waitUntilVisible();
         return $(ILocators.NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE).isVisible();
     }
@@ -172,11 +149,11 @@ public class ConnectionsPage extends PageObject {
     public void userClicksOnSaveButton() {
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).waitUntilClickable();
         $(ILocators.NEW_CONNECTION_SAVE_BUTTON).click();
-
+        waitForLoader("userClicksOnSaveButton");
     }
 
     public boolean userShouldSeeCreatedConnection(String arg0) {
-        waitForLoader();
+
         return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).isVisible();
     }
 
@@ -208,6 +185,7 @@ public class ConnectionsPage extends PageObject {
     public void userClickDeleteMenuOption() {
         $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).waitUntilClickable();
         $(ILocators.CONNECTION_SETTINGS_DELETE_OPTION).click();
+        waitForLoader("userClickDeleteMenuOption");
     }
 
     public boolean userShouldSeeConfirmDeleteDialog() {
@@ -223,11 +201,11 @@ public class ConnectionsPage extends PageObject {
     public void userClicksDeleteButton() {
         waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.DELETE_BUTTON))).
                 clickOn($(ILocators.DELETE_BUTTON));
+        waitForLoader("userClicksDeleteButton");
 
     }
 
     public boolean connectionShouldBeRemoved() {
-        $(ILocators.DELETE_BUTTON).waitUntilNotVisible();
         return $(ILocators.CREATED_CONNECTION_TITLE).isVisible();
     }
 

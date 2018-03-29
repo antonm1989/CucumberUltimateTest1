@@ -95,12 +95,6 @@ public class DefinitionSteps {
         steps.userClicksOnOption(arg0);
     }
 
-    @Then("^user should see SQL Server option selected$")
-    public void userShouldSeeSQLServerOptionSelected() throws Throwable {
-        steps.userShouldSeeSQLServerOptionSelected();
-
-    }
-
     @Then("^user should see Connection Name field$")
     public void userShouldSeeConnectionNameField() throws Throwable {
         steps.userShouldSeeConnectionNameField();
@@ -262,10 +256,6 @@ public class DefinitionSteps {
         steps.userShouldSeeConnectionName(arg0);
     }
 
-//    @When("^user clicks on Connection name$")
-//    public void userClicksOnConnectionName() throws Throwable {
-//        steps.userClicksOnConnectionName();
-//    }
 
     @Then("^user should see Connection Objects$")
     public void userShouldSeeConnectionObjects() throws Throwable {
@@ -277,21 +267,6 @@ public class DefinitionSteps {
         steps.userEntersTableNameIsSearchField(arg0);
     }
 
-    @Then("^user should see Orders table in filter results$")
-    public void userShouldSeeOrdersTableInFilterResults() throws Throwable {
-        steps.userShouldSeeOrdersTableInFilterResults();
-
-    }
-
-    @When("^user selects table in filter results$")
-    public void userSelectsTableInFilterResults() throws Throwable {
-        steps.userSelectsTableInFilterResults();
-    }
-
-    @Then("^user should see that the table is selected$")
-    public void userShouldSeeThatTheTableIsSelected() throws Throwable {
-        steps.userShouldSeeThatTheTableIsSelected();
-    }
 
     @When("^user selects all columns$")
     public void userSelectsAllColumns() throws Throwable {
@@ -302,5 +277,26 @@ public class DefinitionSteps {
     @When("^user clicks on Connection name \"([^\"]*)\"$")
     public void userClicksOnConnectionName(String arg0) throws Throwable {
         steps.userClicksOnConnectionName(arg0);
+    }
+
+
+    @Then("^user should see \"([^\"]*)\" table in filter results$")
+    public void userShouldSeeTableInFilterResults(String arg0) throws Throwable {
+        steps.userShouldSeeTableInFilterResults(arg0);
+    }
+
+    @When("^user selects table \"([^\"]*)\" in filter results$")
+    public void userSelectsTableInFilterResults(String arg0) throws Throwable {
+        steps.userSelectsTableInFilterResults(arg0);
+    }
+
+    @Then("^user should see that table \"([^\"]*)\" is selected$")
+    public void userShouldSeeThatTableIsSelected(String arg0) throws Throwable {
+        steps.userShouldSeeThatTableIsSelected(arg0);
+    }
+
+    @Then("^user should see that all columns are selected$")
+    public void userShouldSeeThatAllColumnsAreSelected() throws Throwable {
+        steps.userShouldSeeThatAllColumnsAreSelected();
     }
 }

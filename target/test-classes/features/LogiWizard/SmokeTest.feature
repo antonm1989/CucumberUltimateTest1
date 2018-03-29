@@ -24,10 +24,9 @@ Feature: Setup data in DH3 admin
     When user clicks on Select Data Provider dropdown
     Then user should see "SQLServer" option
 
-
     When user clicks on "Microsoft SQL Server" option
-    Then user should see SQL Server option selected
-    And user should see Connection Name field
+
+    Then user should see Connection Name field
 
     When user enters Connection Name as "QASQL2K8"
     And user enters Server Name as "QASQL2K8"
@@ -48,7 +47,6 @@ Feature: Setup data in DH3 admin
     When user clicks on Save button
     Then user should see created connection "QASQL2K8"
 
-
     When user hovers mouse over Dataviews menu
     Then user should see Create A New Dataview option
 
@@ -63,30 +61,31 @@ Feature: Setup data in DH3 admin
     Then user should see Connection Objects
 
     When user enters table name "dbo.Orders" is Search field
-    Then user should see Orders table in filter results
+    Then user should see "dbo.Orders" table in filter results
 
-    When user selects table in filter results
-    Then user should see that the table is selected
+    When user selects table "dbo.Orders" in filter results
+    Then user should see that table "dbo.Orders" is selected
 
-    #When user selects all columns
+    When user selects all columns
+    Then user should see that all columns are selected
 
 
+# Remove created connection to prepare for the next test run
 
-    #When user clicks on Sources button
-    #Then user should see Connections page "http://localhost:3000/datahub/Connections"
-    #And user should see Create New Source button
+    When user clicks on Sources button
+    Then user should see Connections page "http://localhost:3000/datahub/Connections"
+    And user should see Create New Source button
+    And user should see Connection Settings Cog
 
-    #Then user should see Connection Settings Cog
+    When user hovers mouse over Connection Settings Cog
+    Then user should see Delete Menu Option
 
-    #When user hovers mouse over Connection Settings Cog
-    #Then user should see Delete Menu Option
+    When user click Delete Menu Option
+    Then user should see Confirm Delete Dialog
+    And user should see Delete button
 
-    #When user click Delete Menu Option
-    #Then user should see Confirm Delete Dialog
-    #And user should see Delete button
-
-    #When user clicks Delete button
-    #Then connection should be removed
+    When user clicks Delete button
+    Then connection should be removed
 
 
 

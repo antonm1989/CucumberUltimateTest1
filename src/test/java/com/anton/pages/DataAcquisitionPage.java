@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DataAcquisitionPage extends PageObject {
 
+    ConnectionsPage connectionsPage;
+
     public boolean userShouldSeeCreateFromSourceButton() {
         $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).waitUntilVisible();
         return $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).isVisible();
@@ -21,20 +23,23 @@ public class DataAcquisitionPage extends PageObject {
 
     public void userClickCreateFromSourceButton() {
         $(ILocators.CREATE_DATAVIEW_FROM_SOURCE_BUTTON).click();
+        connectionsPage.waitForLoader("userClickCreateFromSourceButton");
     }
 
     public boolean userShouldSeeConnectionName(String arg0) {
-        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).waitUntilVisible();
-        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).isVisible();
+        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).waitUntilVisible();
+        return $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).isVisible();
     }
 
-//    public void userClicksOnConnectionName() {
-//        $(ILocators.CREATED_CONNECTION_TITLE).click();
-//    }
+    public void userClicksOnConnectionName(String arg0) {
+        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).click();
+        connectionsPage.waitForLoader("userClicksOnConnectionName");
+    }
+
 
     public boolean userShouldSeeConnectionObjects() {
         $(ILocators.CONNECTION_OBJECTS_TITLE).waitUntilVisible();
-        $(ILocators.WIDGET_OVERLAY_LOADING).waitUntilPresent();
+        //$(ILocators.WIDGET_OVERLAY_LOADING).waitUntilPresent();
         return $(ILocators.CONNECTION_OBJECTS_TITLE).isVisible();
     }
 
@@ -46,23 +51,31 @@ public class DataAcquisitionPage extends PageObject {
 
     }
 
-    public boolean userShouldSeeOrdersTableInFilterResults() {
-        return $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS).isVisible();
+
+    public boolean userShouldSeeTableInFilterResults(String arg0) {
+        return $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS.replace("$1", arg0)).isVisible();
     }
 
-    public void userSelectsTableInFilterResults() {
-        $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS).click();
+    public void userSelectsTableInFilterResults(String arg0) {
+        $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS.replace("$1", arg0)).click();
+        connectionsPage.waitForLoader("userSelectsTableInFilterResults");
     }
 
-    public boolean userShouldSeeThatTheTableIsSelected() {
+    public boolean userShouldSeeThatTableIsSelected() {
         return $(ILocators.SELECTED_TABLE_IN_SEARCH_RESULT).isVisible();
     }
 
     public void userSelectsAllColumns() {
+        WebElement select_All_Columns = $(ILocators.SELECT_ALL_COLUMNS_BUTTON).find(By.xpath(ILocators.SELECT_ALL_COLUMNS_BUTTON));
+        Actions builder = new Actions(getDriver());
+        builder.moveToElement(select_All_Columns).build().perform();
         $(ILocators.SELECT_ALL_COLUMNS_BUTTON).click();
+        waitABit(2000);
+
+
     }
 
-    public void userClicksOnConnectionName(String arg0) {
-        $(ILocators.CREATED_CONNECTION_TITLE.replace("$1",arg0)).click();
+    public boolean userShouldSeeThatAllColumnsAreSelected() {
+        return $(ILocators.FIRST_SELECTED_COLUMN).isVisible();
     }
 }

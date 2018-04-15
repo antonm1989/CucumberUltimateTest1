@@ -209,6 +209,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeCreateANewDataviewOption() {
+        $(ILocators.CREATE_A_NEW_DATAVIEW_OPTION).waitUntilVisible();
         return $(ILocators.CREATE_A_NEW_DATAVIEW_OPTION).isVisible();
     }
 

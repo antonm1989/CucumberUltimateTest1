@@ -70,7 +70,6 @@ public class DataAcquisitionPage extends PageObject {
 
     public void userSelectsTableInFilterResults(String arg0) {
         $(ILocators.FIRST_TABLE_NAME_IN_SEARCH_RESULTS.replace("$1", arg0)).click();
-        //connectionsPage.waitForLoader("userSelectsTableInFilterResults");
     }
 
     public boolean userShouldSeeThatTableIsSelected() {

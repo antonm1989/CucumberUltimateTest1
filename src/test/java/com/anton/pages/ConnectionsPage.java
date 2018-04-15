@@ -17,7 +17,6 @@ public class ConnectionsPage extends PageObject {
 
     public void waitForLoader(String methodName) {
         try {
-            //withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
             withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
             waitABit(300);
         } catch (Exception e) {

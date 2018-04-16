@@ -9,8 +9,9 @@ public interface ILocators {
 
     String HOME_LOGO = "//span[@class='logi-font icon-datahub']";
 
-    String SOURCES_BUTTON = "//span[@data-bind=\"text:i18n('sources.label')\"]";
-    String CREATE_NEW_SOURCE_BUTTON = "//span[@data-bind=\"text: i18nTitle('connections.home.createNewConnectionLabel')\"]";
+    String SOURCES_BUTTON = "//span[contains(text(),'Sources')]";
+    String CREATE_NEW_SOURCE_BUTTON = "//span[contains(text(),'Create New Source')]";
+
     String ADD_SOURCE_WINDOW = "//span[contains(text(),'Add Source')]";
 
     String DATA_PROVIDER_DROPDOWN = "//select[@id='selectDataProvider']";
@@ -23,7 +24,7 @@ public interface ILocators {
     String NEW_CONNECTION_PASSWORD_FIELD = "//input[contains(@data-bind,'password')]";
     String NEW_CONNECTION_GET_DATABASES_BUTTON = "//button[contains(@data-bind,'getDatabases')]";
     String NEW_CONNECTION_DATABASE_NAME_SELECTOR = "//select[contains(@data-bind,'options: selectedDataProvider().databases')]";
-    String NEW_CONNECTION_DATABASE_SELECTOR_NGP_OPTION = "//option[@value=\"NGP\"]";
+    String NEW_CONNECTION_DATABASE_SELECTOR_NGP_OPTION = "//option[@value='NGP']";
     String NEW_CONNECTION_PORT_NUMBER_FIELD = "//input[contains(@data-bind,'PortNumber')]";
     String NEW_CONNECTION_TEST_SOURCE_BUTTON = "//button/span[contains(text(),'Test Source')]";
     String NEW_CONNECTION_SUCCESSFUL_TEST_ALERT_MESSAGE = "//div[@class='alert success-message']";
@@ -42,10 +43,10 @@ public interface ILocators {
 
     String WIDGET_OVERLAY_LOADING = "//div[@class='ui-widget-overlay loading']";
 
-    String SEARCH_TABLE_BY_NAME_FIELD = "(//input[@class='string-filter-input'])[1]";
+    String SEARCH_TABLE_BY_NAME_FIELD = "//li[@class='flex-1 margin-right-small']/div[@class='box with-header']/div[@class='filter-inputs']/input[@class='string-filter-input']";
 
     String FIRST_TABLE_NAME_IN_SEARCH_RESULTS = "//li[@class='data-source-table-section-label']/following-sibling::li[1]//span[@title='$1']";
-    String SELECTED_TABLE_IN_SEARCH_RESULT = "//li[@class='data-source-table-section-label']/following-sibling::li[1]/div[@class=\"data-source-table-pill selected\"]";
+    String SELECTED_TABLE_IN_SEARCH_RESULT = "//li[@class='data-source-table-section-label']/following-sibling::li[1]/div[@class='data-source-table-pill selected']";
     String SELECT_ALL_COLUMNS_BUTTON = "//a[@data-bind='click: function () { onSelectOrDeselectAllColumns(true); }'][contains(text(),'All')]";
 
     String FIRST_SELECTED_COLUMN="//ul[@id='dataSourceTableColumnsList']//div[@class='data-source-table-column-pill layout-flex used']";

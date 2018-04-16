@@ -35,11 +35,12 @@ public class DataAcquisitionPage extends PageObject {
 
     public void userClicksOnConnectionName(String arg0) {
         $(ILocators.CREATED_CONNECTION_TITLE.replace("$1", arg0)).click();
-        connectionsPage.waitForLoader("userClicksOnConnectionName");
+
     }
 
 
     public boolean userShouldSeeConnectionObjects() {
+        connectionsPage.waitForLoader("userShouldSeeConnectionObjects");
         $(ILocators.CONNECTION_OBJECTS_TITLE).waitUntilVisible();
         //$(ILocators.WIDGET_OVERLAY_LOADING).waitUntilPresent();
         return $(ILocators.CONNECTION_OBJECTS_TITLE).isVisible();
@@ -54,10 +55,15 @@ public class DataAcquisitionPage extends PageObject {
     }
 
     public void userEntersTableNameIsSearchField(String arg0) {
-        WebElementFacade loader = find(By.xpath(ILocators.SEARCH_TABLE_BY_NAME_FIELD));
-        waitForInvisibilityOfElement(loader,20,1000);
 
-        //connectionsPage.waitForLoader("userEntersTableNameIsSearchField");
+//        connectionsPage.waitForLoader("userEntersTableNameIsSearchField");
+        waitABit(1000);
+        WebElementFacade loader = find(By.xpath(ILocators.WIDGET_OVERLAY_LOADING));
+        waitForInvisibilityOfElement(loader,20,1000);
+        $(ILocators.WIDGET_OVERLAY_LOADING).waitUntilNotVisible();
+        $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).waitUntilVisible();
+        $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).waitUntilClickable();
+
         $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).click();
         $(ILocators.SEARCH_TABLE_BY_NAME_FIELD).sendKeys(arg0);
 

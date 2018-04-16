@@ -17,8 +17,10 @@ public class ConnectionsPage extends PageObject {
 
     public void waitForLoader(String methodName) {
         try {
-            withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
-            waitABit(300);
+            while ($(ILocators.WIDGET_OVERLAY_LOADING).isVisible()) {
+                withTimeoutOf(60, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated(By.xpath(ILocators.WIDGET_OVERLAY_LOADING)));
+            }
+            //waitABit(300);
         } catch (Exception e) {
             System.out.println(methodName + " - Wait for loader failed\n");
         }
@@ -32,10 +34,11 @@ public class ConnectionsPage extends PageObject {
     public void userClicksOnSourcesButton() {
 
         $(ILocators.SOURCES_BUTTON).click();
-        waitForLoader("userClicksOnSourcesButton");
+
     }
 
     public boolean userShouldSeeCreateNewSourceButton() {
+        waitForLoader("userShouldSeeCreateNewSourceButton");
         return $(ILocators.CREATE_NEW_SOURCE_BUTTON).isVisible();
     }
 
@@ -44,7 +47,7 @@ public class ConnectionsPage extends PageObject {
     }
 
     public boolean userShouldSeeAddSourceWindow() {
-
+        waitForLoader("userShouldSeeAddSourceWindow");
         return $(ILocators.ADD_SOURCE_WINDOW).isVisible();
     }
 

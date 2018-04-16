@@ -36,7 +36,7 @@ Feature: Setup data in DH3 admin
     Then user should see Database Name selector
 
     When user clicks on Database Name selector
-    Then user should see NGP option
+    Then user should see "NGP" option
 
     When user selects NGP option
     Then user should see that NGP option is selected
@@ -72,20 +72,20 @@ Feature: Setup data in DH3 admin
 
 # Remove created connection to prepare for the next test run
 
-    When user clicks on Sources button
-    Then user should see Connections page "http://localhost:3000/datahub/Connections"
-    And user should see Create New Source button
-    And user should see Connection Settings Cog
-
-    When user hovers mouse over Connection Settings Cog
-    Then user should see Delete Menu Option
-
-    When user click Delete Menu Option
-    Then user should see Confirm Delete Dialog
-    And user should see Delete button
-
-    When user clicks Delete button
-    Then connection should be removed
+#    When user clicks on Sources button
+#    Then user should see Connections page "http://localhost:3000/datahub/Connections"
+#    And user should see Create New Source button
+#    And user should see Connection Settings Cog
+#
+#    When user hovers mouse over Connection Settings Cog
+#    Then user should see Delete Menu Option
+#
+#    When user click Delete Menu Option
+#    Then user should see Confirm Delete Dialog
+#    And user should see Delete button
+#
+#    When user clicks Delete button
+#    Then connection should be removed
 
 
 

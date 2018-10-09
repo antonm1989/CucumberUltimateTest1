@@ -6,8 +6,8 @@ Feature: Setup data in DH3 admin
 
   Scenario: Create connection and Dataview
 
-    Given the user is on the home page "http://localhost:3000/datahub"
-    Then user should see the login page "http://localhost:3000/datahub/Account/Login"
+    Given the user is on the home page "http://172.26.7.119:3000/datahub"
+    Then user should see the login page "http://172.26.7.119:3000/datahub/Account/Login"
 
     When user perform login with "admin" and "password"
     Then user should see home logo

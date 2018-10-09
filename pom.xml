@@ -12,8 +12,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <serenity.version>1.8.21</serenity.version>
-        <serenity.cucumber.version>1.6.10</serenity.cucumber.version>
+        <serenity.version>2.0.4</serenity.version>
+        <serenity.cucumber.version>1.9.15</serenity.cucumber.version>
         <!--<webdriver.driver>firefox</webdriver.driver>-->
     </properties>
 
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.8.1</version>
+            <version>3.14.0</version>
         </dependency>
 
             <dependency>

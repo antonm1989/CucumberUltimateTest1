@@ -13,6 +13,7 @@ public class LoginPage extends PageObject {
         $(ILocators.USERNAME_FIELD).sendKeys(arg0);
         $(ILocators.PASSWORD_FIELD).clear();
         $(ILocators.PASSWORD_FIELD).sendKeys(arg1);
+        $(ILocators.LOGIN_BUTTON).waitUntilVisible();
         $(ILocators.LOGIN_BUTTON).click();
     }
 

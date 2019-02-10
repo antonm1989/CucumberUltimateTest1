@@ -1,13 +1,13 @@
-Feature: Setup data in DH3 admin
-  In order to be able to build a visualization in wizard
-  As a User
-  I want to setup required data in DH3 admin
+Feature: Setup data in Data Authoring
+  In order to be able to manage data
+  As an admin user
+  I want to setup required data in Data Authoring
 
 
   Scenario: Create connection and Dataview
 
-    Given the user is on the home page "http://172.26.7.119:3000/datahub"
-    Then user should see the login page "http://172.26.7.119:3000/datahub/Account/Login"
+    Given the user is on the home page "http://a-malykhin.logixml.local:3000/composer/login"
+    Then user should see the login page "http://a-malykhin.logixml.local:3000/composer/login"
 
     When user perform login with "admin" and "password"
     Then user should see home logo

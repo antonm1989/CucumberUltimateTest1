@@ -3,9 +3,9 @@ package com.anton;
 import org.yecht.Data;
 
 public interface ILocators {
-    String LOGIN_BUTTON = "//button[@class='button brand-btn']";
-    String USERNAME_FIELD = "//input[@id='UserName']";
-    String PASSWORD_FIELD = "//input[@id='Password']";
+    String LOGIN_BUTTON = "//button[@class='btn btn-primary']";
+    String USERNAME_FIELD = "//input[@placeholder='username']";
+    String PASSWORD_FIELD = "//input[@placeholder='password']";
 
     String HOME_LOGO = "//span[@class='logi-font icon-datahub']";
 
